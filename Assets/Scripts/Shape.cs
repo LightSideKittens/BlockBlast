@@ -34,7 +34,10 @@ public class Shape : MonoBehaviour
 
         ghost.SetColor(ghostColor);
         foreach (var b in ghost.blocks)
+        {
             b.color = new Color(ghostColor.r, ghostColor.g, ghostColor.b, 0.4f);
+            b.sortingOrder = -1; // 👈 делает призрак всегда "под" формой
+        }
         Destroy(ghost.GetComponent<Dragger>());
         return ghost;
     }
