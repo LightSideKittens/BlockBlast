@@ -3,43 +3,71 @@ using UnityEngine;
 
 public class Shape : MonoBehaviour
 {
+    public List<SpriteRenderer> blocks = new List<SpriteRenderer>();
     public Vector2Int ratio;
-    public List<SpriteRenderer> blocks;
+    public GameObject usedBlockPrefab;
+    public Dictionary<SpriteRenderer, GameObject> blockPrefabMap = new();
+
     private void Awake()
     {
-        for (var i = 0; i < transform.childCount; i++)
+        blocks.Clear();
+        foreach (Transform child in transform)
         {
-            blocks.Add(transform.GetChild(i).GetComponent<SpriteRenderer>());
+            var sr = child.GetComponent<SpriteRenderer>();
+            if (sr != null)
+                blocks.Add(sr);
         }
     }
-    
-    public void SetColor(Color color)
-    {
-        for (var i = 0; i < blocks.Count; i++)
-        {
-            blocks[i].color = color;
-        }
-    }
-    
-    public Shape CreateGhost(Color ghostColor)
-    {
-        var ghost = Instantiate(this, transform.position, transform.rotation);
 
-        // Принудительно обновим список блоков вручную:
+    public Shape CreateGhost(Sprite sprite)
+    {
+        var ghostObj = new GameObject("GhostShape");
+        var ghost = ghostObj.AddComponent<Shape>();
+        ghost.ratio = this.ratio;
+
         ghost.blocks = new List<SpriteRenderer>();
-        for (var i = 0; i < ghost.transform.childCount; i++)
+
+        foreach (var original in blocks)
         {
-            ghost.blocks.Add(ghost.transform.GetChild(i).GetComponent<SpriteRenderer>());
+            var newBlockObj = new GameObject("GhostBlock");
+            newBlockObj.transform.position = original.transform.position;
+            newBlockObj.transform.SetParent(ghostObj.transform);
+
+            var sr = newBlockObj.AddComponent<SpriteRenderer>();
+            sr.sprite = sprite;
+            sr.color = new Color(1f, 1f, 1f, 0.4f); // прозрачный
+            sr.sortingOrder = -1;
+
+            ghost.blocks.Add(sr);
         }
 
-        ghost.SetColor(ghostColor);
-        foreach (var b in ghost.blocks)
-        {
-            b.color = new Color(ghostColor.r, ghostColor.g, ghostColor.b, 0.4f);
-            b.sortingOrder = -1; // 👈 делает призрак всегда "под" формой
-        }
-        Destroy(ghost.GetComponent<Dragger>());
         return ghost;
     }
 
+
+    public void SetSprite(Sprite newSprite)
+    {
+        foreach (var block in blocks)
+        {
+            block.sprite = newSprite;
+        }
+    }
+
+    
+    public void ReplaceBlocks(GameObject newBlockPrefab)
+    {
+        blockPrefabMap.Clear();
+        usedBlockPrefab = newBlockPrefab;
+
+        List<SpriteRenderer> newBlocks = new();
+        foreach (var old in blocks)
+        {
+            var newBlock = Instantiate(newBlockPrefab, old.transform.position, Quaternion.identity, transform);
+            newBlocks.Add(newBlock.GetComponent<SpriteRenderer>());
+            blockPrefabMap[newBlocks[^1]] = newBlockPrefab;
+            Destroy(old.gameObject);
+        }
+
+        blocks = newBlocks;
+    }
 }

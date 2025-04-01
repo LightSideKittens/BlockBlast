@@ -33,7 +33,7 @@ public class Dragger : MonoBehaviour
                         {
                             foreach (var block in shape.blocks)
                             {
-                                block.sortingOrder = 1;
+                                block.sortingOrder = 2;
                             }
                         }
                         // Инициализируем предыдущую позицию

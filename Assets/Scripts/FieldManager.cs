@@ -5,7 +5,7 @@ using UnityEngine;
 public class FieldManager : MonoBehaviour
 {
     public List<Spawner> spawners;
-    private Dictionary<SpriteRenderer, Color> originalColors;
+    private Dictionary<SpriteRenderer, Sprite> originalSprites;
     public Vector2Int gridSize;
     private Vector3 gridOffset;
     private SpriteRenderer[,] grid;
@@ -18,8 +18,7 @@ public class FieldManager : MonoBehaviour
 
     private void Awake()
     {
-        originalColors = new Dictionary<SpriteRenderer, Color>();
-
+        originalSprites = new Dictionary<SpriteRenderer, Sprite>();
         grid = new SpriteRenderer[gridSize.x, gridSize.y];
         gridOffset = new Vector3(back.size.x / 2, back.size.y / 2);
         CreateAndInitShape();
@@ -35,13 +34,11 @@ public class FieldManager : MonoBehaviour
             var startPos = dragger.transform.position;
             dragger.Ended += OnEnd;
             dragger.Started += OnStart;
-            shape.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            shape.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
 
             void OnStart()
             {
                 shape.transform.localScale = new Vector3(1f, 1f, 1f);
-                //var ghost = shape.CreateGhost(Color.gray); // или другой "призрачный" цвет
-                //dragger.ghostShape = ghost;
                 dragger.fieldManager = this;
             }
 
@@ -65,7 +62,8 @@ public class FieldManager : MonoBehaviour
                     gridIndices.Add(gridIndex);
 
                     if (gridIndex.x > -1 && gridIndex.x < grid.GetLength(0)
-                                         && gridIndex.y > -1 && gridIndex.y < grid.GetLength(1)) // исправлено GetLength(0) -> GetLength(1)
+                                         && gridIndex.y > -1 &&
+                                         gridIndex.y < grid.GetLength(1)) // исправлено GetLength(0) -> GetLength(1)
                     {
                         if (grid[gridIndex.x, gridIndex.y] == null)
                         {
@@ -106,7 +104,7 @@ public class FieldManager : MonoBehaviour
                 else
                 {
                     dragger.transform.position = startPos;
-                    shape.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                    shape.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
                 }
             }
 
@@ -172,186 +170,187 @@ public class FieldManager : MonoBehaviour
     }
 
     public void UpdateGhost(Transform shapeTransform)
-{
-    // Удалим предыдущего призрака, если он остался
-    if (currentGhostShape != null)
     {
-        Destroy(currentGhostShape.gameObject);
-        currentGhostShape = null;
-    }
-
-    // Получаем Shape с драггера
-    var shape = shapeTransform.GetComponent<Shape>();
-    if (shape == null || shape.blocks == null || shape.blocks.Count == 0) return;
-
-    // Создаём нового призрака
-    var ghost = shape.CreateGhost(Color.gray);
-    currentGhostShape = ghost;
-
-    var gridIndices = new List<Vector2Int>();
-    var canPlace = true;
-
-    for (var i = 0; i < shape.blocks.Count; i++)
-    {
-        var block = shape.blocks[i];
-        var localPos = back.transform.InverseTransformPoint(block.transform.position);
-        localPos += gridOffset;
-        var gridIndex = new Vector2Int(Mathf.RoundToInt(localPos.x), Mathf.RoundToInt(localPos.y));
-        gridIndices.Add(gridIndex);
-
-        // Проверяем, не заняты ли ячейки
-        if (gridIndex.x > -1 && gridIndex.x < grid.GetLength(0)
-            && gridIndex.y > -1 && gridIndex.y < grid.GetLength(1))
+        // Удалим предыдущего призрака, если он остался
+        if (currentGhostShape != null)
         {
-            if (grid[gridIndex.x, gridIndex.y] == null)
-            {
-                continue;
-            }
+            Destroy(currentGhostShape.gameObject);
+            currentGhostShape = null;
         }
 
-        canPlace = false;
-    }
+        // Получаем Shape с драггера
+        var shape = shapeTransform.GetComponent<Shape>();
+        if (shape == null || shape.blocks == null || shape.blocks.Count == 0) return;
 
-    if (!canPlace)
-    {
-        // 🔄 Сброс подсветки, даже если размещение невозможно
-        if (originalColors != null)
+        // Создаём нового призрака
+        var sprite = shape.blocks[0].sprite;
+        var ghost = shape.CreateGhost(sprite);
+        currentGhostShape = ghost;
+
+        var gridIndices = new List<Vector2Int>();
+        var canPlace = true;
+
+        for (var i = 0; i < shape.blocks.Count; i++)
         {
-            foreach (var kvp in originalColors)
+            var block = shape.blocks[i];
+            var localPos = back.transform.InverseTransformPoint(block.transform.position);
+            localPos += gridOffset;
+            var gridIndex = new Vector2Int(Mathf.RoundToInt(localPos.x), Mathf.RoundToInt(localPos.y));
+            gridIndices.Add(gridIndex);
+
+            // Проверяем, не заняты ли ячейки
+            if (gridIndex.x > -1 && gridIndex.x < grid.GetLength(0)
+                                 && gridIndex.y > -1 && gridIndex.y < grid.GetLength(1))
             {
-                if (kvp.Key != null)
+                if (grid[gridIndex.x, gridIndex.y] == null)
                 {
-                    kvp.Key.color = kvp.Value;
+                    continue;
                 }
             }
-            originalColors.Clear();
+
+            canPlace = false;
         }
 
-        Destroy(ghost.gameObject);
-        currentGhostShape = null;
-        return;
-    }
+        if (!canPlace)
+        {
+            // 🔄 Сброс подсветки, даже если размещение невозможно
+            if (originalSprites != null)
+            {
+                foreach (var kvp in originalSprites)
+                {
+                    if (kvp.Key != null)
+                    {
+                        kvp.Key.sprite = kvp.Value;
+                    }
+                }
+                originalSprites.Clear();
+            }
 
-    // Размещаем блоки призрака поверх ячеек
-    for (int i = 0; i < ghost.blocks.Count; i++)
-    {
-        var gridIndex = gridIndices[i];
-        Vector2 worldPos = gridIndex;
-        worldPos -= (Vector2)gridOffset;
-        worldPos = back.transform.TransformPoint(worldPos);
+            Destroy(ghost.gameObject);
+            currentGhostShape = null;
+            return;
+        }
 
-        ghost.blocks[i].transform.position = worldPos;
-    }
+        // Размещаем блоки призрака поверх ячеек
+        for (int i = 0; i < ghost.blocks.Count; i++)
+        {
+            var gridIndex = gridIndices[i];
+            Vector2 worldPos = gridIndex;
+            worldPos -= (Vector2)gridOffset;
+            worldPos = back.transform.TransformPoint(worldPos);
 
-    if (shape.blocks.Count > 0)
-    {
-        shapeColor = shape.blocks[0].color;
+            ghost.blocks[i].transform.position = worldPos;
+        }
+
+        if (shape.blocks.Count > 0)
+        {
+            shapeColor = shape.blocks[0].color;
+        }
+
+        HighlightDestroyableLines(gridIndices, shapeColor);
     }
-    
-    HighlightDestroyableLines(gridIndices, shapeColor);
-}
 
     private void HighlightDestroyableLines(List<Vector2Int> futureIndices, Color highlightColor)
 
-{
-    // 🔄 Сброс подсветки
-    foreach (var kvp in originalColors)
     {
-        if (kvp.Key != null)
+        // 🔄 Сброс подсветки
+        foreach (var kvp in originalSprites)
         {
-            kvp.Key.color = kvp.Value;
-        }
-    }
-    originalColors.Clear();
-
-    int width = grid.GetLength(0);
-    int height = grid.GetLength(1);
-
-    // 💡 создаём логическую сетку занятости, вместо реальных объектов
-    bool[,] simulatedOccupied = new bool[width, height];
-
-    foreach (var index in futureIndices)
-    {
-        if (index.x >= 0 && index.x < width && index.y >= 0 && index.y < height)
-        {
-            simulatedOccupied[index.x, index.y] = true;
-        }
-    }
-
-    // Метод для подсветки ячеек
-    void HighlightCell(int x, int y)
-    {
-        if (x < 0 || x >= width || y < 0 || y >= height) return;
-
-        var sprite = grid[x, y];
-        if (sprite != null)
-        {
-            if (!originalColors.ContainsKey(sprite))
+            if (kvp.Key != null)
             {
-                originalColors[sprite] = sprite.color;
+                kvp.Key.sprite = kvp.Value;
             }
-            sprite.color = highlightColor; 
         }
-        else if (currentGhostShape != null && currentGhostShape.blocks != null)
-        {
-            foreach (var block in currentGhostShape.blocks)
-            {
-                if (block == null) continue;
+        originalSprites.Clear();
 
-                var localPos = back.transform.InverseTransformPoint(block.transform.position) + gridOffset;
-                var ghostIndex = new Vector2Int(Mathf.RoundToInt(localPos.x), Mathf.RoundToInt(localPos.y));
-                if (ghostIndex == new Vector2Int(x, y))
+        int width = grid.GetLength(0);
+        int height = grid.GetLength(1);
+
+        // 💡 создаём логическую сетку занятости, вместо реальных объектов
+        bool[,] simulatedOccupied = new bool[width, height];
+
+        foreach (var index in futureIndices)
+        {
+            if (index.x >= 0 && index.x < width && index.y >= 0 && index.y < height)
+            {
+                simulatedOccupied[index.x, index.y] = true;
+            }
+        }
+
+        // Метод для подсветки ячеек
+        void HighlightCell(int x, int y)
+        {
+            if (x < 0 || x >= width || y < 0 || y >= height) return;
+
+            var sprite = grid[x, y];
+            if (sprite != null)
+            {
+                if (!originalSprites.ContainsKey(sprite))
                 {
-                    block.color = highlightColor;
+                    originalSprites[sprite] = sprite.sprite;
+                }
+                sprite.sprite = currentGhostShape.blocks[0].sprite;
+            }
+            else if (currentGhostShape != null && currentGhostShape.blocks != null)
+            {
+                foreach (var block in currentGhostShape.blocks)
+                {
+                    if (block == null) continue;
+
+                    var localPos = back.transform.InverseTransformPoint(block.transform.position) + gridOffset;
+                    var ghostIndex = new Vector2Int(Mathf.RoundToInt(localPos.x), Mathf.RoundToInt(localPos.y));
+                    if (ghostIndex == new Vector2Int(x, y))
+                    {
+                        block.color = highlightColor;
+                    }
+                }
+            }
+        }
+
+        // 🔷 Подсветка строк
+        for (int y = 0; y < height; y++)
+        {
+            bool fullRow = true;
+            for (int x = 0; x < width; x++)
+            {
+                if (!simulatedOccupied[x, y] && grid[x, y] == null)
+                {
+                    fullRow = false;
+                    break;
+                }
+            }
+
+            if (fullRow)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    HighlightCell(x, y);
+                }
+            }
+        }
+
+        // 🔷 Подсветка колонн
+        for (int x = 0; x < width; x++)
+        {
+            bool fullColumn = true;
+            for (int y = 0; y < height; y++)
+            {
+                if (!simulatedOccupied[x, y] && grid[x, y] == null)
+                {
+                    fullColumn = false;
+                    break;
+                }
+            }
+
+            if (fullColumn)
+            {
+                for (int y = 0; y < height; y++)
+                {
+                    HighlightCell(x, y);
                 }
             }
         }
     }
-
-    // 🔷 Подсветка строк
-    for (int y = 0; y < height; y++)
-    {
-        bool fullRow = true;
-        for (int x = 0; x < width; x++)
-        {
-            if (!simulatedOccupied[x, y] && grid[x, y] == null)
-            {
-                fullRow = false;
-                break;
-            }
-        }
-
-        if (fullRow)
-        {
-            for (int x = 0; x < width; x++)
-            {
-                HighlightCell(x, y);
-            }
-        }
-    }
-
-    // 🔷 Подсветка колонн
-    for (int x = 0; x < width; x++)
-    {
-        bool fullColumn = true;
-        for (int y = 0; y < height; y++)
-        {
-            if (!simulatedOccupied[x, y] && grid[x, y] == null)
-            {
-                fullColumn = false;
-                break;
-            }
-        }
-
-        if (fullColumn)
-        {
-            for (int y = 0; y < height; y++)
-            {
-                HighlightCell(x, y);
-            }
-        }
-    }
-}
 
 
     private void CheckAndDestroyBlocks()
