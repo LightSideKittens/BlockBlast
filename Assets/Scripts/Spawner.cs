@@ -4,7 +4,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public List<Shape> shapes;
-    public List<Sprite> blockSprites; // 💡 теперь здесь спрайты, а не префабы
+    public List<Sprite> blockSprites;
 
     public Shape SpawnRandomShape()
     {
@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
         var shapeInstance = Instantiate(shapePrefab, transform.position, Quaternion.identity);
 
         var sprite = blockSprites[Random.Range(0, blockSprites.Count)];
-        shapeInstance.SetSprite(sprite); // 👈 вот тут магия
+        shapeInstance.SetSprite(sprite);
 
         return shapeInstance;
     }

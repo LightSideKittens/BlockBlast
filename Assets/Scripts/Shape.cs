@@ -5,8 +5,6 @@ public class Shape : MonoBehaviour
 {
     public List<SpriteRenderer> blocks = new List<SpriteRenderer>();
     public Vector2Int ratio;
-    public GameObject usedBlockPrefab;
-    public Dictionary<SpriteRenderer, GameObject> blockPrefabMap = new();
 
     private void Awake()
     {
@@ -35,7 +33,7 @@ public class Shape : MonoBehaviour
 
             var sr = newBlockObj.AddComponent<SpriteRenderer>();
             sr.sprite = sprite;
-            sr.color = new Color(1f, 1f, 1f, 0.4f); // прозрачный
+            sr.color = new Color(1f, 1f, 1f, 0.4f);
             sr.sortingOrder = -1;
 
             ghost.blocks.Add(sr);
@@ -43,8 +41,7 @@ public class Shape : MonoBehaviour
 
         return ghost;
     }
-
-
+    
     public void SetSprite(Sprite newSprite)
     {
         foreach (var block in blocks)
@@ -52,22 +49,5 @@ public class Shape : MonoBehaviour
             block.sprite = newSprite;
         }
     }
-
     
-    public void ReplaceBlocks(GameObject newBlockPrefab)
-    {
-        blockPrefabMap.Clear();
-        usedBlockPrefab = newBlockPrefab;
-
-        List<SpriteRenderer> newBlocks = new();
-        foreach (var old in blocks)
-        {
-            var newBlock = Instantiate(newBlockPrefab, old.transform.position, Quaternion.identity, transform);
-            newBlocks.Add(newBlock.GetComponent<SpriteRenderer>());
-            blockPrefabMap[newBlocks[^1]] = newBlockPrefab;
-            Destroy(old.gameObject);
-        }
-
-        blocks = newBlocks;
-    }
 }
