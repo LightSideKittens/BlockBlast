@@ -14,37 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: SayaStory_2
   m_GUID: 9203143efbdf8de4295df895bef0d145
-  m_SerializeEntries:
-  - m_GUID: 07da01a0c0fdb6340818a07ccaea8efb
-    m_Address: Assets/Scenes/SayaStory_2/SayaStory_2_2.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 770d6ed136d1337439f7c3230d4c96da
-    m_Address: Assets/Scenes/SayaStory_2/SayaStory_2_Match3.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 907ea1bb2ef4a15448ed8c98dbde0239
-    m_Address: Assets/Scenes/SayaStory_2/SayaStory_2_3.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b789632539cb00f4a863deb17df4bfce
-    m_Address: Assets/Scenes/SayaStory_2/SayaStory_2_Main.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: eda0e1117ac075f469738f6dbec206f7
-    m_Address: Assets/Scenes/SayaStory_2/SayaStory_2_1.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f10c3940e503c68409d46c1e0cb24172
-    m_Address: Assets/Scenes/SayaStory_2/SayaStory_2_4.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 628e248f84a83454da553537863cdff4, type: 2}
   m_SchemaSet:

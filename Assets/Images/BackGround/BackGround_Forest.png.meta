@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c2f6345f5dde76748a3e995577da5100
+guid: 7b246a36232125940b96481b3f9063a6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5484150215771146461
-    second: TetrisPhoto_0
+      213: -8285976820115613993
+    second: BackGround_Forest_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TetrisPhoto_0
+      name: BackGround_Forest_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 1600
+        height: 2400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dd8cbe1a09d9b1c40800000000000000
-      internalID: 5484150215771146461
+      spriteID: 7d653ebabfb420d80800000000000000
+      internalID: -8285976820115613993
       vertices: []
       indices: 
       edges: []
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BackGround_Forest_0: -8285976820115613993
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

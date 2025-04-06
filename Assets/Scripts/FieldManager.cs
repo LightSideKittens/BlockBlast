@@ -15,6 +15,8 @@ public class FieldManager : MonoBehaviour
     private bool _allShapesPlaced;
     private Color shapeColor;
     private Shape currentGhostShape;
+    public ScoreManager scoreManager;
+    private int? lastUsedSpriteIndex = null;
 
     private void Awake()
     {
@@ -28,13 +30,13 @@ public class FieldManager : MonoBehaviour
     {
         foreach (var spawner in spawners)
         {
-            var shape = spawner.SpawnRandomShape();
+            var shape = spawner.SpawnRandomShape(ref lastUsedSpriteIndex);
             Debug.Log(await CanPlace());
             var dragger = shape.GetComponent<Dragger>();
             var startPos = dragger.transform.position;
             dragger.Ended += OnEnd;
             dragger.Started += OnStart;
-            shape.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+            shape.transform.localScale = new Vector3(0.65f, 0.65f, 0.65f);
 
             void OnStart()
             {
@@ -104,7 +106,7 @@ public class FieldManager : MonoBehaviour
                 else
                 {
                     dragger.transform.position = startPos;
-                    shape.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+                    shape.transform.localScale = new Vector3(0.65f, 0.65f, 0.65f);
                 }
             }
 
@@ -347,21 +349,28 @@ public class FieldManager : MonoBehaviour
 
     private void CheckAndDestroyBlocks()
     {
-        CheckAndDestroyBlocks(false);
-        CheckAndDestroyBlocks(true);
+        int totalDestroyed = 0;
+        totalDestroyed += CheckAndDestroyBlocks(false);
+        totalDestroyed += CheckAndDestroyBlocks(true);
+
+        if (scoreManager != null)
+        {
+            bool wasLineBroken = totalDestroyed > 0;
+            scoreManager.AddScore(totalDestroyed, wasLineBroken);
+        }
     }
 
-    private void CheckAndDestroyBlocks(bool checkColumns)
+    private int CheckAndDestroyBlocks(bool checkColumns)
     {
-        int x;
-        int y;
+        int x, y;
+        int destroyedLines = 0;
+
         int xCount = checkColumns ? grid.GetLength(1) : grid.GetLength(0);
         int yCount = checkColumns ? grid.GetLength(0) : grid.GetLength(1);
 
         for (int i = 0; i < xCount; i++)
         {
-            x = i;
-            bool isAll = true;
+            bool isFullLine = true;
 
             for (int j = 0; j < yCount; j++)
             {
@@ -370,12 +379,12 @@ public class FieldManager : MonoBehaviour
                 if (checkColumns) (x, y) = (y, x);
                 if (grid[x, y] == null)
                 {
-                    isAll = false;
+                    isFullLine = false;
                     break;
                 }
             }
 
-            if (isAll)
+            if (isFullLine)
             {
                 for (int j = 0; j < yCount; j++)
                 {
@@ -385,7 +394,11 @@ public class FieldManager : MonoBehaviour
                     Destroy(grid[x, y].gameObject);
                     grid[x, y] = null;
                 }
+                destroyedLines++;
             }
         }
+
+        return destroyedLines;
     }
+    
 }

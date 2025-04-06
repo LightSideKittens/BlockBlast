@@ -5,18 +5,28 @@ public class Spawner : MonoBehaviour
 {
     public List<Shape> shapes;
     public List<Sprite> blockSprites;
+    private Shape currentShape;
 
-    public Shape SpawnRandomShape()
+    public Shape SpawnRandomShape(ref int? lastUsedSpriteIndex)
     {
+        
         if (shapes.Count == 0 || blockSprites.Count == 0)
             return null;
 
         var shapePrefab = shapes[Random.Range(0, shapes.Count)];
         var shapeInstance = Instantiate(shapePrefab, transform.position, Quaternion.identity);
 
-        var sprite = blockSprites[Random.Range(0, blockSprites.Count)];
+        int newSpriteIndex;
+        do
+        {
+            newSpriteIndex = Random.Range(0, blockSprites.Count);
+        }
+        while (blockSprites.Count > 1 && lastUsedSpriteIndex.HasValue && newSpriteIndex == lastUsedSpriteIndex.Value);
+
+        var sprite = blockSprites[newSpriteIndex];
         shapeInstance.SetSprite(sprite);
 
+        lastUsedSpriteIndex = newSpriteIndex;
         return shapeInstance;
     }
 }
