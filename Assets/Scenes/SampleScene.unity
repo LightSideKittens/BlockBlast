@@ -253,9 +253,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2978e99596e143db979129de34151a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockPrefab: {fileID: 6734035721963693747, guid: ee9c1b6547617054bb8ae36b73a84cd3, type: 3}
+  blockPrefabs:
+  - {fileID: 6734035721963693747, guid: ee9c1b6547617054bb8ae36b73a84cd3, type: 3}
+  - {fileID: 6734035721963693747, guid: 06536c78396fb6842a0365f2b628477a, type: 3}
+  - {fileID: 6734035721963693747, guid: 9688929255ff55f41b1eb2fd6b3f8a5b, type: 3}
   mainCamera: {fileID: 519420031}
   verticalOffsetPercent: 0.1
+  horizontalMarginPercent: 0.1
 --- !u!4 &712587961
 Transform:
   m_ObjectHideFlags: 0
