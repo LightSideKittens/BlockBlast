@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 
 public class FieldManager : MonoBehaviour
@@ -9,12 +10,15 @@ public class FieldManager : MonoBehaviour
     private List<Shape> activeShapes = new();
     private Dictionary<SpriteRenderer, Sprite> originalSprites;
     public Vector2Int gridSize;
+    
+    public float defaultShapeSize = 0.85f;
+    
     private Vector3 gridOffset;
     private SpriteRenderer[,] grid;
     public SpriteRenderer back;
     public bool debug;
-    private int _spawnShapeLock = 0;
-    private bool _allShapesPlaced;
+    private int spawnShapeLock = 0;
+    private bool allShapesPlaced;
     private Color shapeColor;
     private Shape currentGhostShape;
     public ScoreManager scoreManager;
@@ -75,16 +79,16 @@ public class FieldManager : MonoBehaviour
             activeShapes.Add(shape);
 
             var dragger = shape.GetComponent<Dragger>();
-            var startPos = dragger.transform.position;
-            shape.transform.localScale = new Vector3(1f, 1f, 1f);
+            var startPos = shape.transform.position;
+            shape.transform.localScale = Vector3.one * defaultShapeSize;
 
             dragger.Started += () =>
             {
-                shape.transform.localScale = new Vector3(1f, 1f, 1f);
+                shape.transform.localScale = Vector3.one;
                 dragger.fieldManager = this;
             };
 
-            dragger.Ended += async () =>
+            dragger.Ended += () =>
             {
                 if (currentGhostShape != null)
                 {
@@ -134,53 +138,69 @@ public class FieldManager : MonoBehaviour
                     CheckAndDestroyBlocks();
                     CheckLoseCondition();
 
-                    _spawnShapeLock++;
-                    if (_spawnShapeLock >= spawners.Count)
+                    spawnShapeLock++;
+                    if (spawnShapeLock >= spawners.Count)
                     {
-                        _spawnShapeLock = 0;
+                        spawnShapeLock = 0;
                         CreateAndInitShape();
                     }
                 }
                 else
                 {
-                    dragger.transform.position = startPos;
-                    shape.transform.localScale = new Vector3(1f, 1f, 1f);
+                    shape.transform.DOMove(Vector3.zero, 0.3f);
+
+                    SpriteRenderer s = null;
+                    
+                    
+                    
+                    shape.transform.localScale = Vector3.one * defaultShapeSize;
                 }
             };
         }
     }
 
-
     public async Task<bool> CanPlace(Shape shape)
     {
-        Vector2 r = shape.ratio;
-        var sp = shape.transform.position;
-        var tp = back.transform.position - gridOffset + ((Vector3)r / 2);
-        shape.transform.position = tp;
+        var prevScale = shape.transform.localScale;
+        var prevPos = shape.transform.position;
 
-        int xCount = grid.GetLength(0) - (shape.ratio.x - 1);
-        int yCount = grid.GetLength(1) - (shape.ratio.y - 1);
-
-        for (int x = 0; x < xCount; x++)
+        var result = await CheckCanPlace();
+        
+        shape.transform.localScale = prevScale;
+        shape.transform.position = prevPos;
+        
+        return result;
+        
+        async Task<bool> CheckCanPlace()
         {
-            for (int y = 0; y < yCount; y++)
-            {
-                shape.transform.position = tp + new Vector3(x, y);
-                if (debug)
-                {
-                    await Task.Delay(100);
-                }
+            shape.transform.localScale = Vector3.one;
 
-                if (Check(shape))
+            Vector2 r = shape.ratio;
+            var tp = back.transform.position - gridOffset + ((Vector3)r / 2);
+            shape.transform.position = tp;
+
+            int xCount = grid.GetLength(0) - (shape.ratio.x - 1);
+            int yCount = grid.GetLength(1) - (shape.ratio.y - 1);
+
+            for (int x = 0; x < xCount; x++)
+            {
+                for (int y = 0; y < yCount; y++)
                 {
-                    shape.transform.position = sp;
-                    return true;
+                    shape.transform.position = tp + new Vector3(x, y);
+                    if (debug)
+                    {
+                        await Task.Delay(100);
+                    }
+
+                    if (Check(shape))
+                    {
+                        return true;
+                    }
                 }
             }
+        
+            return false;
         }
-
-        shape.transform.position = sp;
-        return false;
     }
 
     private bool Check(Shape shape)
