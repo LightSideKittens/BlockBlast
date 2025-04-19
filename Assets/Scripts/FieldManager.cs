@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class FieldManager : MonoBehaviour
 {
+    [SerializeField] private DifficultyManager difficultyManager;
     public List<Spawner> spawners;
+    private List<Shape> activeShapes = new();
     private Dictionary<SpriteRenderer, Sprite> originalSprites;
     public Vector2Int gridSize;
     private Vector3 gridOffset;
@@ -28,23 +30,61 @@ public class FieldManager : MonoBehaviour
 
     private async void CreateAndInitShape()
     {
+        int totalSpawners = spawners.Count;
+
+        // 1. Получаем текущий уровень сложности от 0 до 1
+        float difficulty = difficultyManager.GetDifficultyValue();
+
+        // 2. Собираем все префабы фигур
+        List<Shape> allShapes = new();
         foreach (var spawner in spawners)
+            allShapes.AddRange(spawner.GetAllShapePrefabs());
+
+        // 3. Ищем фигуры, которые реально можно поставить
+        List<Shape> validShapes = new();
+        foreach (var shapePrefab in allShapes)
         {
-            var shape = spawner.SpawnRandomShape(ref lastUsedSpriteIndex);
-            Debug.Log(await CanPlace());
+            Shape temp = Instantiate(shapePrefab, transform.position, Quaternion.identity);
+            bool canPlace = await CanPlace(temp);
+            Destroy(temp.gameObject);
+            if (canPlace)
+                validShapes.Add(shapePrefab);
+        }
+
+        // 4. Выбираем спавнер, который гарантированно получит подходящую фигуру
+        int guaranteedIndex = validShapes.Count > 0 ? Random.Range(0, totalSpawners) : -1;
+
+        // 5. Спавним фигуры
+        for (int i = 0; i < totalSpawners; i++)
+        {
+            var spawner = spawners[i];
+            Shape shape;
+
+            if (i == guaranteedIndex)
+            {
+                shape = spawner.SpawnSpecificShape(validShapes[Random.Range(0, validShapes.Count)],
+                    ref lastUsedSpriteIndex);
+                Debug.Log($"[SPAWN] Спавнер {i}: ГАРАНТИРОВАННАЯ фигура");
+            }
+            else
+            {
+                shape = spawner.SpawnRandomShape(ref lastUsedSpriteIndex);
+                Debug.Log($"[SPAWN] Спавнер {i}: случайная фигура (сложность {difficulty:F2})");
+            }
+
+            activeShapes.Add(shape);
+
             var dragger = shape.GetComponent<Dragger>();
             var startPos = dragger.transform.position;
-            dragger.Ended += OnEnd;
-            dragger.Started += OnStart;
-            shape.transform.localScale = new Vector3(0.65f, 0.65f, 0.65f);
+            shape.transform.localScale = new Vector3(1f, 1f, 1f);
 
-            void OnStart()
+            dragger.Started += () =>
             {
                 shape.transform.localScale = new Vector3(1f, 1f, 1f);
                 dragger.fieldManager = this;
-            }
+            };
 
-            void OnEnd()
+            dragger.Ended += async () =>
             {
                 if (currentGhostShape != null)
                 {
@@ -55,22 +95,19 @@ public class FieldManager : MonoBehaviour
                 var gridIndices = new List<Vector2Int>();
                 var canPlace = true;
 
-                for (var i = 0; i < shape.blocks.Count; i++)
+                for (var j = 0; j < shape.blocks.Count; j++)
                 {
-                    var block = shape.blocks[i];
+                    var block = shape.blocks[j];
                     var localPos = back.transform.InverseTransformPoint(block.transform.position);
                     localPos += gridOffset;
                     var gridIndex = new Vector2Int(Mathf.RoundToInt(localPos.x), Mathf.RoundToInt(localPos.y));
                     gridIndices.Add(gridIndex);
 
-                    if (gridIndex.x > -1 && gridIndex.x < grid.GetLength(0)
-                                         && gridIndex.y > -1 &&
-                                         gridIndex.y < grid.GetLength(1))
+                    if (gridIndex.x >= 0 && gridIndex.x < grid.GetLength(0)
+                                         && gridIndex.y >= 0 && gridIndex.y < grid.GetLength(1))
                     {
                         if (grid[gridIndex.x, gridIndex.y] == null)
-                        {
                             continue;
-                        }
                     }
 
                     canPlace = false;
@@ -78,23 +115,24 @@ public class FieldManager : MonoBehaviour
 
                 if (canPlace)
                 {
-                    for (var i = 0; i < shape.blocks.Count; i++)
+                    for (int j = 0; j < shape.blocks.Count; j++)
                     {
-                        var gridIndex = gridIndices[i];
-                        Vector2 worldPos = gridIndex;
-                        worldPos -= (Vector2)gridOffset;
+                        var gridIndex = gridIndices[j];
+                        Vector2 worldPos = gridIndex - (Vector2)gridOffset;
 
-                        var block = shape.blocks[i];
-
+                        var block = shape.blocks[j];
                         grid[gridIndex.x, gridIndex.y] = block;
 
                         block.transform.parent = null;
-                        worldPos = back.transform.TransformPoint(worldPos);
-                        block.transform.position = worldPos;
+                        block.transform.position = back.transform.TransformPoint(worldPos);
                     }
 
+                    activeShapes.Remove(shape);
                     Destroy(dragger);
+
+                    difficultyManager.OnShapePlaced();
                     CheckAndDestroyBlocks();
+                    CheckLoseCondition();
 
                     _spawnShapeLock++;
                     if (_spawnShapeLock >= spawners.Count)
@@ -106,70 +144,110 @@ public class FieldManager : MonoBehaviour
                 else
                 {
                     dragger.transform.position = startPos;
-                    shape.transform.localScale = new Vector3(0.65f, 0.65f, 0.65f);
+                    shape.transform.localScale = new Vector3(1f, 1f, 1f);
                 }
-            }
-
-
-            async Task<bool> CanPlace()
-            {
-                Vector2 r = shape.ratio;
-                var sp = shape.transform.position;
-                var tp = back.transform.position - gridOffset + ((Vector3)r / 2);
-                shape.transform.position = tp;
-
-                int xCount = grid.GetLength(0) - (shape.ratio.x - 1);
-                int yCount = grid.GetLength(1) - (shape.ratio.y - 1);
-
-                for (int x = 0; x < xCount; x++)
-                {
-                    for (int y = 0; y < yCount; y++)
-                    {
-                        shape.transform.position = tp + new Vector3(x, y);
-                        if (debug)
-                        {
-                            await Task.Delay(100);
-                        }
-
-                        var check = Check();
-                        shape.transform.position = sp;
-                        if (check)
-                        {
-                            return true;
-                        }
-                    }
-                }
-
-                shape.transform.position = sp;
-                return false;
-            }
-
-            bool Check()
-            {
-                var canPlace = true;
-                for (var i = 0; i < shape.blocks.Count; i++)
-                {
-                    var block = shape.blocks[i];
-                    var localPos = back.transform.InverseTransformPoint(block.transform.position);
-                    localPos += gridOffset;
-                    var gridIndex = new Vector2Int(Mathf.RoundToInt(localPos.x), Mathf.RoundToInt(localPos.y));
-                    if (gridIndex.x > -1 && gridIndex.x < grid.GetLength(0)
-                                         && gridIndex.y > -1 && gridIndex.y < grid.GetLength(0))
-                    {
-                        if (grid[gridIndex.x, gridIndex.y] == null)
-                        {
-                            continue;
-                        }
-                    }
-
-                    canPlace = false;
-                    break;
-                }
-
-                return canPlace;
-            }
+            };
         }
     }
+
+
+    public async Task<bool> CanPlace(Shape shape)
+    {
+        Vector2 r = shape.ratio;
+        var sp = shape.transform.position;
+        var tp = back.transform.position - gridOffset + ((Vector3)r / 2);
+        shape.transform.position = tp;
+
+        int xCount = grid.GetLength(0) - (shape.ratio.x - 1);
+        int yCount = grid.GetLength(1) - (shape.ratio.y - 1);
+
+        for (int x = 0; x < xCount; x++)
+        {
+            for (int y = 0; y < yCount; y++)
+            {
+                shape.transform.position = tp + new Vector3(x, y);
+                if (debug)
+                {
+                    await Task.Delay(100);
+                }
+
+                if (Check(shape))
+                {
+                    shape.transform.position = sp;
+                    return true;
+                }
+            }
+        }
+
+        shape.transform.position = sp;
+        return false;
+    }
+
+    private bool Check(Shape shape)
+    {
+        for (var i = 0; i < shape.blocks.Count; i++)
+        {
+            var block = shape.blocks[i];
+            var localPos = back.transform.InverseTransformPoint(block.transform.position);
+            localPos += gridOffset;
+            var gridIndex = new Vector2Int(Mathf.RoundToInt(localPos.x), Mathf.RoundToInt(localPos.y));
+
+            if (gridIndex.x < 0 || gridIndex.x >= grid.GetLength(0)
+                                || gridIndex.y < 0 || gridIndex.y >= grid.GetLength(1)
+                                || grid[gridIndex.x, gridIndex.y] != null)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private async void CheckLoseCondition()
+    {
+        if (activeShapes.Count == 0)
+            return;
+
+        foreach (var shape in activeShapes)
+        {
+            if (shape == null) continue;
+
+            if (await CanPlace(shape))
+                return;
+        }
+
+        Debug.Log("Поражение: ни одна из оставшихся фигур не может быть размещена.");
+        // TODO: проигрыш
+    }
+
+    private async Task<bool> SimulateCanPlace(Shape shape)
+    {
+        Vector2 r = shape.ratio;
+        var originalPosition = shape.transform.position;
+        var tp = back.transform.position - gridOffset + ((Vector3)r / 2);
+
+        int xCount = grid.GetLength(0) - (shape.ratio.x - 1);
+        int yCount = grid.GetLength(1) - (shape.ratio.y - 1);
+
+        for (int x = 0; x < xCount; x++)
+        {
+            for (int y = 0; y < yCount; y++)
+            {
+                shape.transform.position = tp + new Vector3(x, y);
+                if (debug) await Task.Delay(100);
+
+                if (Check(shape))
+                {
+                    shape.transform.position = originalPosition;
+                    return true;
+                }
+            }
+        }
+
+        shape.transform.position = originalPosition;
+        return false;
+    }
+
 
     public void UpdateGhost(Transform shapeTransform)
     {
@@ -394,11 +472,11 @@ public class FieldManager : MonoBehaviour
                     Destroy(grid[x, y].gameObject);
                     grid[x, y] = null;
                 }
+
                 destroyedLines++;
             }
         }
 
         return destroyedLines;
     }
-    
 }

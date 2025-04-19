@@ -29,4 +29,28 @@ public class Spawner : MonoBehaviour
         lastUsedSpriteIndex = newSpriteIndex;
         return shapeInstance;
     }
+    
+    public List<Shape> GetAllShapePrefabs()
+    {
+        return shapes;
+    }
+
+    public Shape SpawnSpecificShape(Shape shapePrefab, ref int? lastUsedSpriteIndex)
+    {
+        var shapeInstance = Instantiate(shapePrefab, transform.position, Quaternion.identity);
+
+        int newSpriteIndex;
+        do
+        {
+            newSpriteIndex = Random.Range(0, blockSprites.Count);
+        }
+        while (blockSprites.Count > 1 && lastUsedSpriteIndex.HasValue && newSpriteIndex == lastUsedSpriteIndex.Value);
+
+        var sprite = blockSprites[newSpriteIndex];
+        shapeInstance.SetSprite(sprite);
+        lastUsedSpriteIndex = newSpriteIndex;
+
+        return shapeInstance;
+    }
+
 }

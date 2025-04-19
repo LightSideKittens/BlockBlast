@@ -478,6 +478,7 @@ Transform:
   - {fileID: 2036381706}
   - {fileID: 386858215}
   - {fileID: 1462728971}
+  - {fileID: 1665887359}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
@@ -1745,6 +1746,76 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1665887358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1665887359}
+  - component: {fileID: 1665887360}
+  m_Layer: 0
+  m_Name: DifficultManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1665887359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665887358}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.18105516, y: -0.6293713, z: 0.024330495}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 488826849}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1665887360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665887358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b544ab1bc91484eb9fdde1523b5ff99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultyCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  mediumThreshold: 10
+  hardThreshold: 20
 --- !u!1 &1908312568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,13 +2019,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555f9b1308234fc79590addfedb44744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficultyManager: {fileID: 1665887360}
   spawners:
   - {fileID: 948870161}
   - {fileID: 381801807}
   - {fileID: 1169543746}
   gridSize: {x: 8, y: 8}
   back: {fileID: 2096066674}
-  debug: 1
+  debug: 0
   scoreManager: {fileID: 1462728972}
 --- !u!4 &2036381706
 Transform:
