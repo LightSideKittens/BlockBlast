@@ -10,6 +10,8 @@ public class FieldManager : MonoBehaviour
     private List<Shape> activeShapes = new();
     private Dictionary<SpriteRenderer, Sprite> originalSprites;
     public Vector2Int gridSize;
+
+    public ParticleSystem shapeAppearFx;
     
     public float defaultShapeSize = 0.85f;
     
@@ -84,7 +86,7 @@ public class FieldManager : MonoBehaviour
 
             dragger.Started += () =>
             {
-                shape.transform.localScale = Vector3.one;
+                shape.transform.DOScale(Vector3.one, 0.2f);
                 dragger.fieldManager = this;
             };
 
@@ -119,6 +121,8 @@ public class FieldManager : MonoBehaviour
 
                 if (canPlace)
                 {
+                    var sequence = DOTween.Sequence();
+                    
                     for (int j = 0; j < shape.blocks.Count; j++)
                     {
                         var gridIndex = gridIndices[j];
@@ -128,7 +132,8 @@ public class FieldManager : MonoBehaviour
                         grid[gridIndex.x, gridIndex.y] = block;
 
                         block.transform.parent = null;
-                        block.transform.position = back.transform.TransformPoint(worldPos);
+                        var tween = block.transform.DOMove(back.transform.TransformPoint(worldPos), 0.3f);
+                        sequence.Insert(j * 0.025f, tween);
                     }
 
                     activeShapes.Remove(shape);
@@ -147,18 +152,25 @@ public class FieldManager : MonoBehaviour
                 }
                 else
                 {
-                    shape.transform.DOMove(Vector3.zero, 0.3f);
-
-                    SpriteRenderer s = null;
-                    
-                    
-                    
-                    shape.transform.localScale = Vector3.one * defaultShapeSize;
+                    shape.transform.DOMove(startPos, 0.6f).SetEase(Ease.InOutExpo);
+                    shape.transform.DOScale(Vector3.one * defaultShapeSize, 0.2f);
                 }
             };
         }
-    }
 
+        for (int i = 0; i < activeShapes.Count; i++)
+        {
+            var shape = activeShapes[i];
+            
+            shape.transform.localScale = Vector3.zero;
+            
+            shape.transform.DOScale(Vector3.one * defaultShapeSize, 0.2f).OnComplete(() =>
+            {
+                Instantiate(shapeAppearFx, shape.transform.position, Quaternion.identity);
+            });
+        }
+    }
+    
     public async Task<bool> CanPlace(Shape shape)
     {
         var prevScale = shape.transform.localScale;

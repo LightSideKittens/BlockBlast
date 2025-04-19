@@ -2025,6 +2025,8 @@ MonoBehaviour:
   - {fileID: 381801807}
   - {fileID: 1169543746}
   gridSize: {x: 8, y: 8}
+  shapeAppearFx: {fileID: 6561236207133405884, guid: 0886070e733be1a41aa4670ce4b9a7fc, type: 3}
+  defaultShapeSize: 0.85
   back: {fileID: 2096066674}
   debug: 0
   scoreManager: {fileID: 1462728972}
