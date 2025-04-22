@@ -6,8 +6,7 @@ public class Dragger : MonoBehaviour
     private bool isDragging = false;
     private Vector3 offset;
     private Vector3 previousGhostPosition;
-    public Shape ghostShape;
-    public FieldManager fieldManager;
+    [HideInInspector] public FieldManager fieldManager;
     public event Action Started;
     public event Action Ended;
 
@@ -47,7 +46,7 @@ public class Dragger : MonoBehaviour
                         if (fieldManager != null &&
                             Vector3.Distance(transform.position, previousGhostPosition) > 0.001f)
                         {
-                            fieldManager.UpdateGhost(this.transform);
+                            fieldManager.UpdateGhost();
                             previousGhostPosition = transform.position;
                         }
                     }
@@ -69,12 +68,6 @@ public class Dragger : MonoBehaviour
                         {
                             block.sortingOrder = 0;
                         }
-                    }
-
-                    if (ghostShape != null)
-                    {
-                        Destroy(ghostShape.gameObject);
-                        ghostShape = null;
                     }
 
                     break;

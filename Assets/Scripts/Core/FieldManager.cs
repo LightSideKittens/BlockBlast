@@ -23,6 +23,7 @@ public class FieldManager : MonoBehaviour
     private bool allShapesPlaced;
     private Color shapeColor;
     private Shape currentGhostShape;
+    private Shape currentShape;
     public ScoreManager scoreManager;
     private int? lastUsedSpriteIndex = null;
 
@@ -86,38 +87,20 @@ public class FieldManager : MonoBehaviour
 
             dragger.Started += () =>
             {
+                ClearCurrentGhostShape();
                 shape.transform.DOScale(Vector3.one, 0.2f);
                 dragger.fieldManager = this;
+                
+                CreateGhostShape(dragger.transform);
             };
 
             dragger.Ended += () =>
             {
-                if (currentGhostShape != null)
-                {
-                    Destroy(currentGhostShape.gameObject);
-                    currentGhostShape = null;
-                }
+                ClearCurrentGhostShape();
 
                 var gridIndices = new List<Vector2Int>();
-                var canPlace = true;
 
-                for (var j = 0; j < shape.blocks.Count; j++)
-                {
-                    var block = shape.blocks[j];
-                    var localPos = back.transform.InverseTransformPoint(block.transform.position);
-                    localPos += gridOffset;
-                    var gridIndex = new Vector2Int(Mathf.RoundToInt(localPos.x), Mathf.RoundToInt(localPos.y));
-                    gridIndices.Add(gridIndex);
-
-                    if (gridIndex.x >= 0 && gridIndex.x < grid.GetLength(0)
-                                         && gridIndex.y >= 0 && gridIndex.y < grid.GetLength(1))
-                    {
-                        if (grid[gridIndex.x, gridIndex.y] == null)
-                            continue;
-                    }
-
-                    canPlace = false;
-                }
+                var canPlace = CanPlaceShape(shape, ref gridIndices);
 
                 if (canPlace)
                 {
@@ -137,10 +120,10 @@ public class FieldManager : MonoBehaviour
                     }
 
                     activeShapes.Remove(shape);
-                    Destroy(dragger);
+                    Destroy(dragger.gameObject);
 
                     difficultyManager.OnShapePlaced();
-                    CheckAndDestroyBlocks();
+                    ClearFullLines();
                     CheckLoseCondition();
 
                     spawnShapeLock++;
@@ -169,6 +152,48 @@ public class FieldManager : MonoBehaviour
                 Instantiate(shapeAppearFx, shape.transform.position, Quaternion.identity);
             });
         }
+    }
+
+    private bool CanPlaceShape(Shape shape, ref List<Vector2Int> gridIndices)
+    {
+        bool canPlace = true;
+        for (var j = 0; j < shape.blocks.Count; j++)
+        {
+            var block = shape.blocks[j];
+            var localPos = back.transform.InverseTransformPoint(block.transform.position);
+            localPos += gridOffset;
+            var gridIndex = new Vector2Int(Mathf.RoundToInt(localPos.x), Mathf.RoundToInt(localPos.y));
+            gridIndices.Add(gridIndex);
+
+            if (gridIndex.x >= 0 && gridIndex.x < grid.GetLength(0)
+                                 && gridIndex.y >= 0 && gridIndex.y < grid.GetLength(1))
+            {
+                if (grid[gridIndex.x, gridIndex.y] == null)
+                    continue;
+            }
+
+            canPlace = false;
+        }
+
+        return canPlace;
+    }
+
+    private void ClearCurrentGhostShape()
+    {
+        if (currentGhostShape == null) return;
+        
+        Destroy(currentGhostShape.gameObject);
+        currentGhostShape = null;
+        currentShape = null;
+    }
+
+    private void CreateGhostShape(Transform shapeTransform)
+    {
+        currentShape = shapeTransform.GetComponent<Shape>();
+        if (currentShape == null || currentShape.blocks == null || currentShape.blocks.Count == 0) return;
+
+        var sprite = currentShape.blocks[0].sprite;
+        currentGhostShape = currentShape.CreateGhost(sprite);
     }
     
     public async Task<bool> CanPlace(Shape shape)
@@ -281,43 +306,11 @@ public class FieldManager : MonoBehaviour
     }
 
 
-    public void UpdateGhost(Transform shapeTransform)
+    public void UpdateGhost()
     {
-        if (currentGhostShape != null)
-        {
-            Destroy(currentGhostShape.gameObject);
-            currentGhostShape = null;
-        }
-
-        var shape = shapeTransform.GetComponent<Shape>();
-        if (shape == null || shape.blocks == null || shape.blocks.Count == 0) return;
-
-        var sprite = shape.blocks[0].sprite;
-        var ghost = shape.CreateGhost(sprite);
-        currentGhostShape = ghost;
-
+        currentGhostShape.gameObject.SetActive(true);
         var gridIndices = new List<Vector2Int>();
-        var canPlace = true;
-
-        for (var i = 0; i < shape.blocks.Count; i++)
-        {
-            var block = shape.blocks[i];
-            var localPos = back.transform.InverseTransformPoint(block.transform.position);
-            localPos += gridOffset;
-            var gridIndex = new Vector2Int(Mathf.RoundToInt(localPos.x), Mathf.RoundToInt(localPos.y));
-            gridIndices.Add(gridIndex);
-
-            if (gridIndex.x > -1 && gridIndex.x < grid.GetLength(0)
-                                 && gridIndex.y > -1 && gridIndex.y < grid.GetLength(1))
-            {
-                if (grid[gridIndex.x, gridIndex.y] == null)
-                {
-                    continue;
-                }
-            }
-
-            canPlace = false;
-        }
+        var canPlace = CanPlaceShape(currentShape, ref gridIndices);
 
         if (!canPlace)
         {
@@ -333,25 +326,24 @@ public class FieldManager : MonoBehaviour
 
                 originalSprites.Clear();
             }
-
-            Destroy(ghost.gameObject);
-            currentGhostShape = null;
+            
+            currentGhostShape.gameObject.SetActive(false);
             return;
         }
 
-        for (int i = 0; i < ghost.blocks.Count; i++)
+        for (int i = 0; i < currentGhostShape.blocks.Count; i++)
         {
             var gridIndex = gridIndices[i];
             Vector2 worldPos = gridIndex;
             worldPos -= (Vector2)gridOffset;
             worldPos = back.transform.TransformPoint(worldPos);
 
-            ghost.blocks[i].transform.position = worldPos;
+            currentGhostShape.blocks[i].transform.position = worldPos;
         }
 
-        if (shape.blocks.Count > 0)
+        if (currentShape.blocks.Count > 0)
         {
-            shapeColor = shape.blocks[0].color;
+            shapeColor = currentShape.blocks[0].color;
         }
 
         HighlightDestroyableLines(gridIndices, shapeColor);
@@ -455,60 +447,52 @@ public class FieldManager : MonoBehaviour
             }
         }
     }
-
-
-    private void CheckAndDestroyBlocks()
+    
+    private void ClearFullLines()
     {
-        int totalDestroyed = 0;
-        totalDestroyed += CheckAndDestroyBlocks(false);
-        totalDestroyed += CheckAndDestroyBlocks(true);
+        int w = grid.GetLength(0), h = grid.GetLength(1);
+        var rows = new List<int>();
+        var cols = new List<int>();
 
-        if (scoreManager != null)
+        for (int y = 0; y < h; y++)
         {
-            bool wasLineBroken = totalDestroyed > 0;
-            scoreManager.AddScore(totalDestroyed, wasLineBroken);
+            bool full = true;
+            for (int x = 0; x < w; x++)
+                if (grid[x, y] == null) { full = false; break; }
+            if (full) rows.Add(y);
         }
-    }
-
-    private int CheckAndDestroyBlocks(bool checkColumns)
-    {
-        int x, y;
-        int destroyedLines = 0;
-
-        int xCount = checkColumns ? grid.GetLength(1) : grid.GetLength(0);
-        int yCount = checkColumns ? grid.GetLength(0) : grid.GetLength(1);
-
-        for (int i = 0; i < xCount; i++)
+        for (int x = 0; x < w; x++)
         {
-            bool isFullLine = true;
-
-            for (int j = 0; j < yCount; j++)
-            {
-                x = i;
-                y = j;
-                if (checkColumns) (x, y) = (y, x);
-                if (grid[x, y] == null)
-                {
-                    isFullLine = false;
-                    break;
-                }
-            }
-
-            if (isFullLine)
-            {
-                for (int j = 0; j < yCount; j++)
-                {
-                    x = i;
-                    y = j;
-                    if (checkColumns) (x, y) = (y, x);
-                    Destroy(grid[x, y].gameObject);
-                    grid[x, y] = null;
-                }
-
-                destroyedLines++;
-            }
+            bool full = true;
+            for (int y = 0; y < h; y++)
+                if (grid[x, y] == null) { full = false; break; }
+            if (full) cols.Add(x);
         }
 
-        return destroyedLines;
+        int destroyed = 0;
+        // ряды
+        foreach (int y in rows)
+        {
+            for (int x = 0; x < w; x++)
+            {
+                Destroy(grid[x, y].gameObject);
+                grid[x, y] = null;
+            }
+            destroyed++;
+        }
+        // столбцы, пропуская очищенные ряды
+        foreach (int x in cols)
+        {
+            for (int y = 0; y < h; y++)
+            {
+                if (rows.Contains(y)) continue;
+                Destroy(grid[x, y].gameObject);
+                grid[x, y] = null;
+            }
+            destroyed++;
+        }
+
+        if (destroyed > 0 && scoreManager != null)
+            scoreManager.AddScore(destroyed, true);
     }
 }
