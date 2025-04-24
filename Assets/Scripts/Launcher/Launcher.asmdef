@@ -1,0 +1,4 @@
+﻿{
+  "name": "Launcher",
+  "references":[ "GUID:75992adb30bf51f40a7a0f3283432aa2", "GUID:a6b7f487c8a89734f91e6aeb16bba6ca" ]
+}
