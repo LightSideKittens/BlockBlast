@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class FieldManager : MonoBehaviour
 {
@@ -123,7 +125,10 @@ public class FieldManager : MonoBehaviour
                     Destroy(dragger.gameObject);
 
                     difficultyManager.OnShapePlaced();
-                    ClearFullLines();
+                    if (ClearFullLines())
+                    {
+                        BlocksDestroying?.Invoke(shape.BlockPrefab);
+                    }
                     CheckLoseCondition();
 
                     spawnShapeLock++;
@@ -448,7 +453,7 @@ public class FieldManager : MonoBehaviour
         }
     }
     
-    private void ClearFullLines()
+    private bool ClearFullLines()
     {
         int w = grid.GetLength(0), h = grid.GetLength(1);
         var rows = new List<int>();
@@ -470,7 +475,7 @@ public class FieldManager : MonoBehaviour
         }
 
         int destroyed = 0;
-        // ряды
+        
         foreach (int y in rows)
         {
             for (int x = 0; x < w; x++)
@@ -480,7 +485,7 @@ public class FieldManager : MonoBehaviour
             }
             destroyed++;
         }
-        // столбцы, пропуская очищенные ряды
+        
         foreach (int x in cols)
         {
             for (int y = 0; y < h; y++)
@@ -492,7 +497,13 @@ public class FieldManager : MonoBehaviour
             destroyed++;
         }
 
-        if (destroyed > 0 && scoreManager != null)
+        if (destroyed > 0)
+        {
             scoreManager.AddScore(destroyed, true);
+        }
+        
+        return destroyed > 0;
     }
+
+    public event Action<SpriteRenderer> BlocksDestroying;
 }

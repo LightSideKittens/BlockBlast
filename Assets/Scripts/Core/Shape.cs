@@ -3,17 +3,28 @@ using UnityEngine;
 
 public class Shape : MonoBehaviour
 {
-    public List<SpriteRenderer> blocks = new List<SpriteRenderer>();
+    public List<SpriteRenderer> blocks = new();
     public Vector2Int ratio;
+    public Vector2 offset;
+    private SpriteRenderer blockPrefab;
 
-    private void Awake()
+    public SpriteRenderer BlockPrefab
     {
-        blocks.Clear();
-        foreach (Transform child in transform)
+        get => blockPrefab;
+        set
         {
-            var sr = child.GetComponent<SpriteRenderer>();
-            if (sr != null)
-                blocks.Add(sr);
+            blockPrefab = value;
+            
+            for (int i = 0; i < blocks.Count; i++)
+            {
+                var currBlock = blocks[i];
+                var currBlockTr = currBlock.transform;
+                var siblingIndex = currBlockTr.GetSiblingIndex();
+                var newBlock = Instantiate(value, currBlockTr.position, Quaternion.identity, transform);
+                blocks[i] = newBlock;
+                newBlock.transform.SetSiblingIndex(siblingIndex);
+                Destroy(currBlockTr.gameObject);
+            }
         }
     }
 
@@ -21,7 +32,7 @@ public class Shape : MonoBehaviour
     {
         var ghostObj = new GameObject("GhostShape");
         var ghost = ghostObj.AddComponent<Shape>();
-        ghost.ratio = this.ratio;
+        ghost.ratio = ratio;
 
         ghost.blocks = new List<SpriteRenderer>();
 
@@ -41,13 +52,4 @@ public class Shape : MonoBehaviour
 
         return ghost;
     }
-    
-    public void SetSprite(Sprite newSprite)
-    {
-        foreach (var block in blocks)
-        {
-            block.sprite = newSprite;
-        }
-    }
-    
 }

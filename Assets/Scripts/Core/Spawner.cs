@@ -4,29 +4,30 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public List<Shape> shapes;
-    public List<Sprite> blockSprites;
+    public List<SpriteRenderer> blockPrefabs;
     private Shape currentShape;
 
-    public Shape SpawnRandomShape(ref int? lastUsedSpriteIndex)
+    public Shape SpawnRandomShape(ref int? lastUsedIndex)
     {
-        
-        if (shapes.Count == 0 || blockSprites.Count == 0)
+        if (shapes.Count == 0 || blockPrefabs.Count == 0)
+        {
             return null;
+        }
 
         var shapePrefab = shapes[Random.Range(0, shapes.Count)];
         var shapeInstance = Instantiate(shapePrefab, transform.position, Quaternion.identity);
 
-        int newSpriteIndex;
+        int newIndex;
         do
         {
-            newSpriteIndex = Random.Range(0, blockSprites.Count);
+            newIndex = Random.Range(0, blockPrefabs.Count);
         }
-        while (blockSprites.Count > 1 && lastUsedSpriteIndex.HasValue && newSpriteIndex == lastUsedSpriteIndex.Value);
+        while (blockPrefabs.Count > 1 && lastUsedIndex.HasValue && newIndex == lastUsedIndex.Value);
 
-        var sprite = blockSprites[newSpriteIndex];
-        shapeInstance.SetSprite(sprite);
+        var prefab = blockPrefabs[newIndex];
+        shapeInstance.BlockPrefab = prefab;
 
-        lastUsedSpriteIndex = newSpriteIndex;
+        lastUsedIndex = newIndex;
         return shapeInstance;
     }
     
@@ -35,20 +36,20 @@ public class Spawner : MonoBehaviour
         return shapes;
     }
 
-    public Shape SpawnSpecificShape(Shape shapePrefab, ref int? lastUsedSpriteIndex)
+    public Shape SpawnSpecificShape(Shape shapePrefab, ref int? lastUsedIndex)
     {
         var shapeInstance = Instantiate(shapePrefab, transform.position, Quaternion.identity);
 
-        int newSpriteIndex;
+        int newIndex;
         do
         {
-            newSpriteIndex = Random.Range(0, blockSprites.Count);
+            newIndex = Random.Range(0, blockPrefabs.Count);
         }
-        while (blockSprites.Count > 1 && lastUsedSpriteIndex.HasValue && newSpriteIndex == lastUsedSpriteIndex.Value);
+        while (blockPrefabs.Count > 1 && lastUsedIndex.HasValue && newIndex == lastUsedIndex.Value);
 
-        var sprite = blockSprites[newSpriteIndex];
-        shapeInstance.SetSprite(sprite);
-        lastUsedSpriteIndex = newSpriteIndex;
+        var prefab = blockPrefabs[newIndex];
+        shapeInstance.BlockPrefab = prefab;
+        lastUsedIndex = newIndex;
 
         return shapeInstance;
     }

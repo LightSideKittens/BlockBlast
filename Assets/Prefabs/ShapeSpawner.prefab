@@ -88,8 +88,8 @@ MonoBehaviour:
   - {fileID: 6245424791155680371, guid: 8c91c973ed58af74d9f5ff014043a0fb, type: 3}
   - {fileID: 6245424791155680371, guid: f5904721a373364479ccf7d2cabcbfe0, type: 3}
   - {fileID: 6245424791155680371, guid: 8d873271a118eb2448105130e905c6d3, type: 3}
-  blockSprites:
-  - {fileID: 21300000, guid: a4a2b9d7bc985534caca5782a4ab367a, type: 3}
-  - {fileID: 21300000, guid: c2d26aa8173cb0e4f9b00d8bda00fc21, type: 3}
-  - {fileID: 21300000, guid: 39a43cd0a625e614ea3910658023b54e, type: 3}
-  - {fileID: 21300000, guid: 237074ed1a7a2cd4a92518de41dd0df6, type: 3}
+  blockPrefabs:
+  - {fileID: 4471955903558989647, guid: a4f4528a405237c478ff1e12bd5b95b3, type: 3}
+  - {fileID: 8618653906220301544, guid: 5043e7aefa3409642afcc93bcb798588, type: 3}
+  - {fileID: 8618653906220301544, guid: e962e13680141b7459984d696cf4d485, type: 3}
+  - {fileID: 8618653906220301544, guid: 834f86ccf381f5f4a88a829d79a1ead5, type: 3}
