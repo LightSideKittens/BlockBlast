@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using DG.Tweening;
+using LSCore.Extensions.Unity;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -28,12 +30,14 @@ public class FieldManager : MonoBehaviour
     private Shape currentShape;
     public ScoreManager scoreManager;
     private int? lastUsedSpriteIndex = null;
+    
+    [NonSerialized] public List<(Vector2Int index, SpriteRenderer block)> suicidesIndexes = new();
 
     private void Awake()
     {
         originalSprites = new Dictionary<SpriteRenderer, Sprite>();
         grid = new SpriteRenderer[gridSize.x, gridSize.y];
-        gridOffset = new Vector3(back.size.x / 2, back.size.y / 2);
+        gridOffset = new Vector3(back.size.x / 2, back.size.y / 2) - LSVector3.half;
         CreateAndInitShape();
     }
 
@@ -455,6 +459,7 @@ public class FieldManager : MonoBehaviour
     
     private bool ClearFullLines()
     {
+        suicidesIndexes.Clear();
         int w = grid.GetLength(0), h = grid.GetLength(1);
         var rows = new List<int>();
         var cols = new List<int>();
@@ -480,7 +485,7 @@ public class FieldManager : MonoBehaviour
         {
             for (int x = 0; x < w; x++)
             {
-                Destroy(grid[x, y].gameObject);
+                TryAddSuicide(new Vector2Int(x, y), grid[x, y]);
                 grid[x, y] = null;
             }
             destroyed++;
@@ -491,7 +496,7 @@ public class FieldManager : MonoBehaviour
             for (int y = 0; y < h; y++)
             {
                 if (rows.Contains(y)) continue;
-                Destroy(grid[x, y].gameObject);
+                TryAddSuicide(new Vector2Int(x, y), grid[x, y]);
                 grid[x, y] = null;
             }
             destroyed++;
@@ -503,6 +508,14 @@ public class FieldManager : MonoBehaviour
         }
         
         return destroyed > 0;
+    }
+
+    private void TryAddSuicide(Vector2Int index, SpriteRenderer block)
+    {
+        if (suicidesIndexes.All(x => x.index != index))
+        {
+            suicidesIndexes.Add((index, block));
+        }
     }
 
     public event Action<SpriteRenderer> BlocksDestroying;

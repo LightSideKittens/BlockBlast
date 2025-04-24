@@ -950,7 +950,7 @@ Transform:
   m_GameObject: {fileID: 1156372674}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.30126703, y: 1.9332203, z: 0.0013993054}
+  m_LocalPosition: {x: -0.30126703, y: 1.9332204, z: 0.0013993054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1707,7 +1707,7 @@ MonoBehaviour:
     - key: {fileID: 4471955903558989647, guid: a4f4528a405237c478ff1e12bd5b95b3, type: 3}
       value:
         handler:
-          rid: 2391460340401963084
+          rid: 2391460340401963092
     - key: {fileID: 8618653906220301544, guid: 5043e7aefa3409642afcc93bcb798588, type: 3}
       value:
         handler:
@@ -1723,10 +1723,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 2391460340401963084
-      type: {class: FieldAnimator/BlockHole, ns: Core, asm: Core}
-      data:
-        fx: {fileID: 1421483955}
     - rid: 2391460340401963085
       type: {class: FieldAnimator/Electricity, ns: Core, asm: Core}
       data:
@@ -1736,6 +1732,10 @@ MonoBehaviour:
       data:
         fx: {fileID: 1421483955}
     - rid: 2391460340401963087
+      type: {class: FieldAnimator/Electricity, ns: Core, asm: Core}
+      data:
+        fx: {fileID: 1353816398}
+    - rid: 2391460340401963092
       type: {class: FieldAnimator/Electricity, ns: Core, asm: Core}
       data:
         fx: {fileID: 1353816398}
@@ -2137,7 +2137,7 @@ Transform:
   m_GameObject: {fileID: 1803126901}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.032125983, y: -8.187874, z: 0}
+  m_LocalPosition: {x: -0.03212598, y: -8.187874, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

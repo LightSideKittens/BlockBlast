@@ -4,34 +4,16 @@ using UnityEngine;
 
 namespace Core
 {
-    public class FieldAnimator : MonoBehaviour
+    public partial class FieldAnimator : MonoBehaviour
     {
         [Serializable]
         public abstract class Handler
         {
+            [NonSerialized] public FieldManager fieldManager;
+            
             public abstract void Handle();
         }
-        
-        [Serializable]
-        public class BlockHole : Handler
-        {
-            public ParticleSystem fx;
-            public override void Handle()
-            {
-                fx.Play();
-            }
-        }
-        
-        [Serializable]
-        public class Electricity : Handler
-        {
-            public ParticleSystem fx;
-            public override void Handle()
-            {
-                fx.Play();
-            }
-        }
-        
+
         [Serializable]
         public class HandlerWrapper
         {
@@ -44,9 +26,14 @@ namespace Core
         private void Awake()
         {
             fieldManager.BlocksDestroying += OnDestroyBlocks;
+
+            foreach (var handler in handlers.Values)
+            {
+                handler.handler.fieldManager = fieldManager;
+            }
         }
-        
-        public void OnDestroyBlocks(SpriteRenderer blockPrefab)
+
+        private void OnDestroyBlocks(SpriteRenderer blockPrefab)
         {
             handlers[blockPrefab].handler.Handle();
         }
