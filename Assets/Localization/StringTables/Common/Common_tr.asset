@@ -511,6 +511,18 @@ MonoBehaviour:
     m_Localized: "\xD6d\xFCl almak i\xE7in bas\u0131n..."
     m_Metadata:
       m_Items: []
+  - m_Id: 51675770711494656
+    m_Localized: Tekrar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51675770782797824
+    m_Localized: "Tamamlanan g\xF6rev: {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51675770782797825
+    m_Localized: "\u0130lerlenen g\xF6rev: {0}"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

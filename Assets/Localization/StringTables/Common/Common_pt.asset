@@ -508,6 +508,18 @@ MonoBehaviour:
     m_Localized: Pressione para receber recompensas...
     m_Metadata:
       m_Items: []
+  - m_Id: 51675770711494656
+    m_Localized: Replay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51675770782797824
+    m_Localized: "Miss\xF5es conclu\xEDdas: {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51675770782797825
+    m_Localized: "Miss\xF5es iniciadas: {0}"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

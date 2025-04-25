@@ -508,6 +508,18 @@ MonoBehaviour:
     m_Localized: "Dr\xFCcken Sie, um Belohnungen zu erhalten..."
     m_Metadata:
       m_Items: []
+  - m_Id: 51675770711494656
+    m_Localized: Wiederh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51675770782797824
+    m_Localized: '{0} Quest(s) abgeschlossen'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51675770782797825
+    m_Localized: Fortschritt in {0} Quest(s) erreicht
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -510,6 +510,18 @@ MonoBehaviour:
     m_Localized: "Appuyez pour obtenir des r\xE9compenses..."
     m_Metadata:
       m_Items: []
+  - m_Id: 51675770711494656
+    m_Localized: Replay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51675770782797824
+    m_Localized: "Qu\xEAtes termin\xE9es\_: {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51675770782797825
+    m_Localized: "Qu\xEAtes avanc\xE9es\_: {0}"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

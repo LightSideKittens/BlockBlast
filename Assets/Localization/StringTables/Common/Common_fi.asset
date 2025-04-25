@@ -509,6 +509,18 @@ MonoBehaviour:
     m_Localized: Paina saadaksesi palkintoja...
     m_Metadata:
       m_Items: []
+  - m_Id: 51675770711494656
+    m_Localized: Katsele
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51675770782797824
+    m_Localized: "Suoritetut teht\xE4v\xE4t: {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51675770782797825
+    m_Localized: "Aloitetut teht\xE4v\xE4t: {0}"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
