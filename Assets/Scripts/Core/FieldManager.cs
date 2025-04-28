@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DG.Tweening;
 using LSCore.Extensions.Unity;
+using NUnit.Framework;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -31,8 +32,24 @@ public class FieldManager : MonoBehaviour
     public ScoreManager scoreManager;
     private int? lastUsedSpriteIndex = null;
     
-    [NonSerialized] public List<(Vector2Int index, SpriteRenderer block)> suicidesIndexes = new();
-
+    [NonSerialized] public List<List<(Vector2Int index, SpriteRenderer block)>> suicidesData = new();
+    [NonSerialized] public List<List<(Vector2Int index, SpriteRenderer block)>> uniqueSuicidesData = new();
+    public List<(Vector2Int, SpriteRenderer)> duplicateIndexes = new();
+    public IEnumerable<(Vector2Int index, SpriteRenderer block)> UniqueSuicidesData
+    {
+        get
+        {
+            for (int i = 0; i < uniqueSuicidesData.Count; i++)
+            {
+                var data = uniqueSuicidesData[i];
+                for (var j = 0; j < data.Count; j++)
+                {
+                    var smallData = data[j];
+                    yield return smallData;
+                }
+            }
+        }
+    }
     private void Awake()
     {
         originalSprites = new Dictionary<SpriteRenderer, Sprite>();
@@ -155,10 +172,14 @@ public class FieldManager : MonoBehaviour
             var shape = activeShapes[i];
             
             shape.transform.localScale = Vector3.zero;
+            shapeAppearFx.transform.localScale = Vector3.zero;
+            
             
             shape.transform.DOScale(Vector3.one * defaultShapeSize, 0.2f).OnComplete(() =>
             {
-                Instantiate(shapeAppearFx, shape.transform.position, Quaternion.identity);
+                var appearFxInstance = Instantiate(shapeAppearFx, shape.transform.position, Quaternion.identity);
+                appearFxInstance.transform.localScale = Vector3.zero;
+                appearFxInstance.transform.DOScale(4, 3f); 
             });
         }
     }
@@ -285,35 +306,6 @@ public class FieldManager : MonoBehaviour
         Debug.Log("Поражение: ни одна из оставшихся фигур не может быть размещена.");
         // TODO: проигрыш
     }
-
-    private async Task<bool> SimulateCanPlace(Shape shape)
-    {
-        Vector2 r = shape.ratio;
-        var originalPosition = shape.transform.position;
-        var tp = back.transform.position - gridOffset + ((Vector3)r / 2);
-
-        int xCount = grid.GetLength(0) - (shape.ratio.x - 1);
-        int yCount = grid.GetLength(1) - (shape.ratio.y - 1);
-
-        for (int x = 0; x < xCount; x++)
-        {
-            for (int y = 0; y < yCount; y++)
-            {
-                shape.transform.position = tp + new Vector3(x, y);
-                if (debug) await Task.Delay(100);
-
-                if (Check(shape))
-                {
-                    shape.transform.position = originalPosition;
-                    return true;
-                }
-            }
-        }
-
-        shape.transform.position = originalPosition;
-        return false;
-    }
-
 
     public void UpdateGhost()
     {
@@ -456,10 +448,12 @@ public class FieldManager : MonoBehaviour
             }
         }
     }
-    
+
     private bool ClearFullLines()
     {
-        suicidesIndexes.Clear();
+        suicidesData.Clear();
+        duplicateIndexes.Clear();
+        uniqueSuicidesData.Clear();
         int w = grid.GetLength(0), h = grid.GetLength(1);
         var rows = new List<int>();
         var cols = new List<int>();
@@ -483,23 +477,37 @@ public class FieldManager : MonoBehaviour
         
         foreach (int y in rows)
         {
+            var rowsData = new List<(Vector2Int index, SpriteRenderer block)>();
+            var rowsUniqueData = new List<(Vector2Int index, SpriteRenderer block)>();
             for (int x = 0; x < w; x++)
             {
-                TryAddSuicide(new Vector2Int(x, y), grid[x, y]);
-                grid[x, y] = null;
+                TryAddSuicide(rowsData, rowsUniqueData, new Vector2Int(x, y), grid[x, y]);
             }
+            suicidesData.Add(rowsData);
+            uniqueSuicidesData.Add(rowsUniqueData);
+            destroyed++;
+        }
+        foreach (int x in cols)
+        {
+            var colsData = new List<(Vector2Int index, SpriteRenderer block)>();
+            var colsUniqueData = new List<(Vector2Int index, SpriteRenderer block)>();
+            for (int y = 0; y < h; y++)
+            {
+                TryAddSuicide(colsData, colsUniqueData, new Vector2Int(x, y), grid[x, y]);
+            }
+            suicidesData.Add(colsData);
+            uniqueSuicidesData.Add(colsUniqueData);
             destroyed++;
         }
         
-        foreach (int x in cols)
+        for (var i = 0; i < suicidesData.Count; i++)
         {
-            for (int y = 0; y < h; y++)
+            var data = suicidesData[i];
+            for (var j = 0; j < data.Count; j++)
             {
-                if (rows.Contains(y)) continue;
-                TryAddSuicide(new Vector2Int(x, y), grid[x, y]);
-                grid[x, y] = null;
+                var smallData = data[i].index;
+                grid[smallData.x, smallData.y] = null;
             }
-            destroyed++;
         }
 
         if (destroyed > 0)
@@ -510,12 +518,19 @@ public class FieldManager : MonoBehaviour
         return destroyed > 0;
     }
 
-    private void TryAddSuicide(Vector2Int index, SpriteRenderer block)
+    private void TryAddSuicide(List<(Vector2Int index, SpriteRenderer block)> data, List<(Vector2Int index, SpriteRenderer block)> uniqueData,  Vector2Int index , SpriteRenderer block)
     {
-        if (suicidesIndexes.All(x => x.index != index))
+        if (suicidesData.Any(x => x.Any(y => y.index == index)))
         {
-            suicidesIndexes.Add((index, block));
+            duplicateIndexes.Add((index, block));
         }
+        else
+        {
+            uniqueData.Add((index, block));
+        }
+        data.Add((index, block));
+        
+        
     }
 
     public event Action<SpriteRenderer> BlocksDestroying;

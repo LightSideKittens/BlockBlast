@@ -2,6 +2,7 @@
 using LSCore.DataStructs;
 using UnityEngine;
 
+
 namespace Core
 {
     public partial class FieldAnimator : MonoBehaviour
