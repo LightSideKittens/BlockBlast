@@ -511,6 +511,22 @@ MonoBehaviour:
     m_Key: questsProgressed
     m_Metadata:
       m_Items: []
+  - m_Id: 52799009399558144
+    m_Key: noThanks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141056
+    m_Key: watch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141057
+    m_Key: continueQ
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799563924295680
+    m_Key: revive
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

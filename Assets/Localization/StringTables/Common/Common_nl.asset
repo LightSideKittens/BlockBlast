@@ -520,6 +520,22 @@ MonoBehaviour:
     m_Localized: 'Opdrachten gevorderd: {0}'
     m_Metadata:
       m_Items: []
+  - m_Id: 52799009399558144
+    m_Localized: Nee, bedankt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141056
+    m_Localized: Bekijken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141057
+    m_Localized: Doorgaan?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799563924295680
+    m_Localized: Wederopstanding
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

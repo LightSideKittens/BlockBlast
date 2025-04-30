@@ -98,6 +98,7 @@ public class FieldManager : MonoBehaviour
                 dragger.fieldManager = this;
                 
                 CreateGhostShape(dragger.transform);
+                currentGhostShape.gameObject.SetActive(false);
             };
 
             dragger.Ended += () =>

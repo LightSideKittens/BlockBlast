@@ -521,6 +521,22 @@ MonoBehaviour:
     m_Localized: "Aloitetut teht\xE4v\xE4t: {0}"
     m_Metadata:
       m_Items: []
+  - m_Id: 52799009399558144
+    m_Localized: Ei kiitos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141056
+    m_Localized: Katso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141057
+    m_Localized: Jatketaanko?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799563924295680
+    m_Localized: Elvytys
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

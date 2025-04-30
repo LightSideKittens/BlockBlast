@@ -520,6 +520,22 @@ MonoBehaviour:
     m_Localized: 'Misiones iniciadas: {0}'
     m_Metadata:
       m_Items: []
+  - m_Id: 52799009399558144
+    m_Localized: No, gracias
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141056
+    m_Localized: Ver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141057
+    m_Localized: "\xBFContinuar?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799563924295680
+    m_Localized: Revivir
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

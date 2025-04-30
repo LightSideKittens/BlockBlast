@@ -519,6 +519,22 @@ MonoBehaviour:
     m_Localized: 'Quests Progressed: {0}'
     m_Metadata:
       m_Items: []
+  - m_Id: 52799009399558144
+    m_Localized: No, thanks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141056
+    m_Localized: Watch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141057
+    m_Localized: Continue?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799563924295680
+    m_Localized: Revive
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

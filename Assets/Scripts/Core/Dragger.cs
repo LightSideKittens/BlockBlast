@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using LSCore;
 using UnityEngine;
 
@@ -8,9 +9,13 @@ public class Dragger : MonoBehaviour
     private Vector3 offset;
     private Vector3 previousGhostPosition;
     [HideInInspector] public FieldManager fieldManager;
+    [SerializeField] private Vector2 touchOffset = new (0f, 4f);
     public event Action Started;
     public event Action Ended;
 
+    private bool isStarted = false;
+    private Tween tween;
+    
     private void Update()
     {
         if (LSInput.TouchCount > 0)
@@ -25,25 +30,30 @@ public class Dragger : MonoBehaviour
                     CheckTouch(touchPosition);
                     if (isDragging)
                     {
-                        Started?.Invoke();
-                        var shape = GetComponent<Shape>();
-                        if (shape != null)
+                        var pos = transform.position;
+                        pos += (Vector3) touchOffset;
+                        tween = transform.DOMove(pos, 0.1f).OnComplete(() =>
                         {
-                            foreach (var block in shape.blocks)
+                            Started?.Invoke();
+                            var shape = GetComponent<Shape>();
+                            if (shape != null)
                             {
-                                block.sortingOrder = 2;
+                                foreach (var block in shape.blocks)
+                                {
+                                    block.sortingOrder = 2;
+                                }
                             }
-                        }
 
-                        previousGhostPosition = transform.position;
+                            previousGhostPosition = transform.position;
+                            isStarted = true;
+                        });
                     }
-
                     break;
 
                 case TouchPhase.Moved:
-                    if (isDragging)
+                    if (isDragging && isStarted)
                     {
-                        transform.position = touchPosition + offset;
+                        transform.position = touchPosition + (Vector3) touchOffset + offset;
                         if (fieldManager != null &&
                             Vector3.Distance(transform.position, previousGhostPosition) > 0.001f)
                         {
@@ -51,13 +61,16 @@ public class Dragger : MonoBehaviour
                             previousGhostPosition = transform.position;
                         }
                     }
-
                     break;
 
                 case TouchPhase.Ended:
                 case TouchPhase.Canceled:
                     if (isDragging)
                     {
+                        tween?.Kill();
+                        tween = null;
+                        isStarted = false;
+                        
                         Ended?.Invoke();
                         isDragging = false;
                     }

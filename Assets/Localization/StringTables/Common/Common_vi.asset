@@ -528,6 +528,22 @@ MonoBehaviour:
     m_Localized: "Nhi\u1EC7m v\u1EE5 \u0111\xE3 ti\u1EBFn h\xE0nh: {0}"
     m_Metadata:
       m_Items: []
+  - m_Id: 52799009399558144
+    m_Localized: "Kh\xF4ng, c\u1EA3m \u01A1n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141056
+    m_Localized: Xem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141057
+    m_Localized: "Ti\u1EBFp t\u1EE5c?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799563924295680
+    m_Localized: "H\u1ED3i sinh"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

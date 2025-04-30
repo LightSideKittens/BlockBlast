@@ -520,6 +520,22 @@ MonoBehaviour:
     m_Localized: "Miss\xF5es iniciadas: {0}"
     m_Metadata:
       m_Items: []
+  - m_Id: 52799009399558144
+    m_Localized: "N\xE3o, obrigado"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141056
+    m_Localized: Assistir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141057
+    m_Localized: Continuar?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799563924295680
+    m_Localized: Ressuscitar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

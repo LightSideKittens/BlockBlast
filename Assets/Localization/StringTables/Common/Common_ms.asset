@@ -519,6 +519,22 @@ MonoBehaviour:
     m_Localized: 'Kemajuan Misi: {0}'
     m_Metadata:
       m_Items: []
+  - m_Id: 52799009399558144
+    m_Localized: Tidak, terima kasih
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141056
+    m_Localized: Tonton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141057
+    m_Localized: Teruskan?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799563924295680
+    m_Localized: Hidup semula
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

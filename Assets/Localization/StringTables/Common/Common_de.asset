@@ -520,6 +520,22 @@ MonoBehaviour:
     m_Localized: Fortschritt in {0} Quest(s) erreicht
     m_Metadata:
       m_Items: []
+  - m_Id: 52799009399558144
+    m_Localized: Nein, danke
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141056
+    m_Localized: Ansehen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141057
+    m_Localized: Weitermachen?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799563924295680
+    m_Localized: Wiederbeleben
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

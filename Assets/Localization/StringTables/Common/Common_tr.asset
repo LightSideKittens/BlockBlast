@@ -523,6 +523,22 @@ MonoBehaviour:
     m_Localized: "\u0130lerlenen g\xF6rev: {0}"
     m_Metadata:
       m_Items: []
+  - m_Id: 52799009399558144
+    m_Localized: "Hay\u0131r, te\u015Fekk\xFCrler"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141056
+    m_Localized: "\u0130zle"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799009412141057
+    m_Localized: Devam etmek?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52799563924295680
+    m_Localized: "Canland\u0131rmak"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
