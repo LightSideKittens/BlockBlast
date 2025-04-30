@@ -16,7 +16,7 @@ namespace Core
             {
                 foreach (var (index, _) in fieldManager.UniqueSuicidesData)
                 {
-                    if (UnityEngine.Random.value < probabilityEffect)
+                    if (Random.value < probabilityEffect)
                     {
                         blocksToExplode.Add(index);
                     }
@@ -26,7 +26,7 @@ namespace Core
                     var seq = DOTween.Sequence();
                     var tr = block.transform;
 
-                    seq.Append(tr.DOScale(0, 1f).SetEase(animationCurve));
+                    seq.Append(tr.DOScale(0, .5f).SetEase(animationCurve));
                     seq.OnComplete(() =>
                     {
                         if (blocksToExplode.Contains(index))
