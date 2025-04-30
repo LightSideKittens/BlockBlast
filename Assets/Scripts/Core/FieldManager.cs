@@ -30,6 +30,7 @@ public class FieldManager : MonoBehaviour
     private Shape currentGhostShape;
     private Shape currentShape;
     public ScoreManager scoreManager;
+    
     private int? lastUsedSpriteIndex = null;
     
     [NonSerialized] public List<List<(Vector2Int index, SpriteRenderer block)>> suicidesData = new();
