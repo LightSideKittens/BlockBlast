@@ -31,7 +31,7 @@ public class Dragger : MonoBehaviour
                         {
                             foreach (var block in shape.blocks)
                             {
-                                block.sortingOrder = 2;
+                                block.sortingOrder = 10;
                             }
                         }
 

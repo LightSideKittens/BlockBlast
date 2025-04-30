@@ -1,5 +1,6 @@
 ﻿using System;
 using LSCore.DataStructs;
+using UnityEditor;
 using UnityEngine;
 
 
@@ -22,6 +23,7 @@ namespace Core
         }
         
         public FieldManager fieldManager;
+        
         public UniDict<SpriteRenderer, HandlerWrapper> handlers = new();
 
         private void Awake()
