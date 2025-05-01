@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      stick-locked-bar-white_0: -8026649627340153911
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

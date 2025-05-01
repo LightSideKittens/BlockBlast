@@ -896,7 +896,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 114017448066310960, guid: c5ad6245c6b3fd64784c34d62ab44cea, type: 3}
       propertyPath: orthographic size
-      value: 10
+      value: 11.682646
       objectReference: {fileID: 0}
     - target: {fileID: 166096273747139892, guid: c5ad6245c6b3fd64784c34d62ab44cea, type: 3}
       propertyPath: backgroundRenderer
@@ -1888,10 +1888,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4841226287611981766, guid: ed9d8b3ba1205f54ba9d5126f78961e1, type: 3}
-      propertyPath: 'blockPrefabs.Array.data[0]'
-      value: 
-      objectReference: {fileID: 4471955903558989647, guid: a4f4528a405237c478ff1e12bd5b95b3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1940,7 +1936,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.01, y: -1.91, z: 0}
-  m_LocalScale: {x: 1.1219983, y: 1.1219983, z: 1.1219983}
+  m_LocalScale: {x: 1.1419986, y: 1.1419986, z: 1.1419986}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 329637361}

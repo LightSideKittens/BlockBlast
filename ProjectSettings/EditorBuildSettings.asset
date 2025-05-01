@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Launcher.unity
     guid: 5f9a284cfd586ec45943b50f1c2d07f0
   - enabled: 1
-    path: Assets/Scenes/BlockBlast.unity
+    path: Assets/Scenes/Forest.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: e1142f36b6fe24d42bb4281b35f3a63a, type: 2}
