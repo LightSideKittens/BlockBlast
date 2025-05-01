@@ -536,6 +536,26 @@ MonoBehaviour:
     m_Localized: Revive
     m_Metadata:
       m_Items: []
+  - m_Id: 53433520411955200
+    m_Localized: Game Over
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538112
+    m_Localized: Skor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538113
+    m_Localized: Coba lagi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538114
+    m_Localized: Beranda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53435301984522240
+    m_Localized: Rekor baru!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

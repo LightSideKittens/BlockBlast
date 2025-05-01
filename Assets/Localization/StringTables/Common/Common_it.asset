@@ -535,6 +535,26 @@ MonoBehaviour:
     m_Localized: Rianimare
     m_Metadata:
       m_Items: []
+  - m_Id: 53433520411955200
+    m_Localized: Fine del gioco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538112
+    m_Localized: Punteggio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538113
+    m_Localized: Riprova
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538114
+    m_Localized: Home
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53435301984522240
+    m_Localized: Nuovo record!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

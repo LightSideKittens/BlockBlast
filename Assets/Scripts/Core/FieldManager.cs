@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core;
 using DG.Tweening;
 using LSCore.Extensions.Unity;
 using NUnit.Framework;
@@ -210,24 +211,7 @@ public class FieldManager : MonoBehaviour
         return canPlace;
     }
 
-    private void ClearCurrentGhostShape()
-    {
-        if (currentGhostShape == null) return;
-        
-        Destroy(currentGhostShape.gameObject);
-        currentGhostShape = null;
-        currentShape = null;
-    }
 
-    private void CreateGhostShape(Transform shapeTransform)
-    {
-        currentShape = shapeTransform.GetComponent<Shape>();
-        if (currentShape == null || currentShape.blocks == null || currentShape.blocks.Count == 0) return;
-
-        var sprite = currentShape.blocks[0].sprite;
-        currentGhostShape = currentShape.CreateGhost(sprite);
-    }
-    
     public async Task<bool> CanPlace(Shape shape)
     {
         var prevScale = shape.transform.localScale;
@@ -245,7 +229,7 @@ public class FieldManager : MonoBehaviour
             shape.transform.localScale = Vector3.one;
 
             Vector2 r = shape.ratio;
-            var tp = back.transform.position - gridOffset + ((Vector3)r / 2);
+            var tp = back.transform.position - (gridOffset + LSVector3.half) + ((Vector3)r / 2);
             shape.transform.position = tp;
 
             int xCount = grid.GetLength(0) - (shape.ratio.x - 1);
@@ -258,7 +242,7 @@ public class FieldManager : MonoBehaviour
                     shape.transform.position = tp + new Vector3(x, y);
                     if (debug)
                     {
-                        await Task.Delay(100);
+                        await Task.Delay(200);
                     }
 
                     if (Check(shape))
@@ -271,7 +255,7 @@ public class FieldManager : MonoBehaviour
             return false;
         }
     }
-
+    
     private bool Check(Shape shape)
     {
         for (var i = 0; i < shape.blocks.Count; i++)
@@ -291,24 +275,99 @@ public class FieldManager : MonoBehaviour
 
         return true;
     }
+    
+    private bool TryGetGridIndices(Shape shape, out List<Vector2Int> gridIndices)
+    {
+        int w = grid.GetLength(0), h = grid.GetLength(1);
+        gridIndices = new List<Vector2Int>(shape.blocks.Count);
+
+        // размер одной ячейки в единицах Unity
+        float cellWidth  = back.size.x / w;
+        float cellHeight = back.size.y / h;
+
+        foreach (var block in shape.blocks)
+        {
+            // 1) переводим мировую позицию блока в локальные координаты back:
+            Vector3 loc = back.transform.InverseTransformPoint(block.transform.position);
+            // 2) сдвигаем локал так, чтобы (0,0) было в левом-нижнем углу:
+            loc.x += back.size.x * 0.5f;
+            loc.y += back.size.y * 0.5f;
+            // 3) делим на размер ячейки и берём FloorToInt
+            int ix = Mathf.FloorToInt(loc.x / cellWidth);
+            int iy = Mathf.FloorToInt(loc.y / cellHeight);
+            var idx = new Vector2Int(ix, iy);
+            gridIndices.Add(idx);
+
+            // проверяем, что внутри границ и не пересекается с уже занятым
+            if (ix < 0 || ix >= w || iy < 0 || iy >= h || grid[ix, iy] != null)
+                return false;
+        }
+
+        return true;
+    }
+    
+    
+    private void ClearCurrentGhostShape()
+    {
+        if (currentGhostShape == null) return;
+        
+        Destroy(currentGhostShape.gameObject);
+        currentGhostShape = null;
+        currentShape = null;
+    }
+
+    private void CreateGhostShape(Transform shapeTransform)
+    {
+        currentShape = shapeTransform.GetComponent<Shape>();
+        if (currentShape == null || currentShape.blocks == null || currentShape.blocks.Count == 0) return;
+
+        var sprite = currentShape.blocks[0].sprite;
+        currentGhostShape = currentShape.CreateGhost(sprite);
+    }
 
     private async void CheckLoseCondition()
     {
-        if (activeShapes.Count == 0)
-            return;
+        Debug.Log($"[CheckLoseCondition] Checking lose condition: {activeShapes.Count}");
+        if (activeShapes.Count == 0) return;
 
         foreach (var shape in activeShapes)
         {
             if (shape == null) continue;
-
             if (await CanPlace(shape))
+            {
+                Debug.Log("[CheckLoseCondition] At least one shape can be placed");
                 return;
+            }
+            Debug.Log("[CheckLoseCondition] Can't place shape, checking next");
         }
 
-        Debug.Log("Поражение: ни одна из оставшихся фигур не может быть размещена.");
-        // TODO: проигрыш
+        Debug.Log("[CheckLoseCondition] All shapes blocked -> Game Over");
+        LoseWindow.Hiding -= ClearLoseWindow;
+        LoseWindow.onReviveClicked -= Revive;
+        LoseWindow.Hiding += ClearLoseWindow;
+        LoseWindow.onReviveClicked += Revive;
+        LoseWindow.Show();
     }
 
+    private void ClearLoseWindow()
+    {
+        LoseWindow.onReviveClicked -= Revive;
+        LoseWindow.Hiding -= ClearLoseWindow;
+    }
+    private void Revive()
+    {
+        Debug.Log("[Revive] called!");
+        LoseWindow.onReviveClicked -= Revive;
+        for (int i = activeShapes.Count - 1; i >= 0; i--)
+        {
+            var shape = activeShapes[i];
+            if (shape != null) Destroy(shape.gameObject);
+        }
+        activeShapes.Clear();
+        spawnShapeLock = 0;
+        CreateAndInitShape();
+    }
+    
     public void UpdateGhost()
     {
         currentGhostShape.gameObject.SetActive(true);
@@ -352,9 +411,7 @@ public class FieldManager : MonoBehaviour
         HighlightDestroyableLines(gridIndices, shapeColor);
     }
 
-    private void HighlightDestroyableLines(List<Vector2Int> futureIndices, Color highlightColor)
-
-    {
+    private void HighlightDestroyableLines(List<Vector2Int> futureIndices, Color highlightColor) {
         foreach (var kvp in originalSprites)
         {
             if (kvp.Key != null)
@@ -453,6 +510,7 @@ public class FieldManager : MonoBehaviour
 
     private bool ClearFullLines()
     {
+        Debug.Log("[ClearFullLines] Invoke");
         suicidesData.Clear();
         duplicateIndexes.Clear();
         uniqueSuicidesData.Clear();
@@ -476,6 +534,8 @@ public class FieldManager : MonoBehaviour
         }
 
         int destroyed = 0;
+        
+        Debug.Log("[ClearFullLines] before foreach");
         
         foreach (int y in rows)
         {
@@ -507,7 +567,7 @@ public class FieldManager : MonoBehaviour
             var data = suicidesData[i];
             for (var j = 0; j < data.Count; j++)
             {
-                var smallData = data[i].index;
+                var smallData = data[j].index;
                 grid[smallData.x, smallData.y] = null;
             }
         }
@@ -517,6 +577,7 @@ public class FieldManager : MonoBehaviour
             scoreManager.AddScore(destroyed, true);
         }
         
+        Debug.Log("[ClearFullLines] Clear full lines");
         return destroyed > 0;
     }
 
@@ -531,8 +592,6 @@ public class FieldManager : MonoBehaviour
             uniqueData.Add((index, block));
         }
         data.Add((index, block));
-        
-        
     }
 
     public event Action<SpriteRenderer> BlocksDestroying;

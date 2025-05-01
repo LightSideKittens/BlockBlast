@@ -537,6 +537,26 @@ MonoBehaviour:
     m_Localized: "O\u017Cywienie"
     m_Metadata:
       m_Items: []
+  - m_Id: 53433520411955200
+    m_Localized: Koniec gry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538112
+    m_Localized: Wynik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538113
+    m_Localized: "Spr\xF3buj ponownie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538114
+    m_Localized: "Strona g\u0142\xF3wna"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53435301984522240
+    m_Localized: Nowy rekord!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -59,7 +59,7 @@ MonoBehaviour:
   - {fileID: 2489212273643178414}
   - {fileID: 6682114380990878809}
   - {fileID: 7150514296917411826}
-  ratio: {x: 1, y: 5}
+  ratio: {x: 6, y: 1}
   offset: {x: 0, y: 0}
 --- !u!61 &6815127478130882424
 BoxCollider2D:

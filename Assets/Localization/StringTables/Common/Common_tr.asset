@@ -539,6 +539,26 @@ MonoBehaviour:
     m_Localized: "Canland\u0131rmak"
     m_Metadata:
       m_Items: []
+  - m_Id: 53433520411955200
+    m_Localized: Oyun bitti
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538112
+    m_Localized: Puan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538113
+    m_Localized: Yeniden dene
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538114
+    m_Localized: "Ana Men\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53435301984522240
+    m_Localized: Yeni rekor!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -527,6 +527,26 @@ MonoBehaviour:
     m_Key: revive
     m_Metadata:
       m_Items: []
+  - m_Id: 53433520411955200
+    m_Key: gameOver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538112
+    m_Key: score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538113
+    m_Key: retry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538114
+    m_Key: home
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53435301984522240
+    m_Key: newBest
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

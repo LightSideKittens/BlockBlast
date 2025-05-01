@@ -52,49 +52,55 @@ MonoBehaviour:
   m_GameObject: {fileID: 1011038207463600825}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cab57127942f4b879639f31fade8ef9c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e35f37f63d34936ad429280fd9722be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   initShowHideAnim: 0
   showHideAnim:
     rid: 1724297501560799844
-  onShowing:
-  - rid: 1724297593403212625
+  onShowing: []
   onHiding: []
   onShowed: []
   onHidden: []
+  watchButton: {fileID: 6983757328725076511}
+  timerAnim:
+    rid: 1724297709363134601
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 1724297501560799844
       type: {class: DefaultUIViewAnimation, ns: LSCore, asm: LSCore.UIModule}
       data:
         canvasGroup: {fileID: 1011038207463600823}
         duration: 0.2
-    - rid: 1724297593403212625
-      type: {class: AnimAction, ns: LSCore.AnimationsModule, asm: LSCore.AnimationsModule}
+    - rid: 1724297709363134601
+      type: {class: AnimSequencer, ns: LSCore.AnimationsModule, asm: LSCore.AnimationsModule}
       data:
-        anim:
-          options: []
-          animsData:
-          - timeOffset: 0
-            anim:
-              rid: 1724297593403212626
-          - timeOffset: 0
-            anim:
-              rid: 1724297593403212684
-          - timeOffset: 0
-            anim:
-              rid: 1724297593403212727
-          - timeOffset: 0
-            anim:
-              rid: 1724297593403212739
-    - rid: 1724297593403212626
+        options: []
+        animsData:
+        - timeOffset: 0
+          anim:
+            rid: 1724297709363134645
+        - timeOffset: 0
+          anim:
+            rid: 1724297709363134646
+        - timeOffset: 0
+          anim:
+            rid: 1724297709363134647
+        - timeOffset: 0
+          anim:
+            rid: 1724297709363134648
+        - timeOffset: 3
+          anim:
+            rid: 1724297709363134649
+    - rid: 1724297709363134645
       type: {class: FilledAmountAnim, ns: LSCore.AnimationsModule.Animations, asm: LSCore.AnimationsModule}
       data:
         id: 
         mainOptions:
-        - rid: 1724297593403212637
+        - rid: 1724297709363134650
         <NeedInit>k__BackingField: 1
         <Duration>k__BackingField: 9
         startValue: 0
@@ -108,23 +114,12 @@ MonoBehaviour:
         targetPath: 
         targetsPaths: []
         timeOffsetPerTarget: 0.1
-    - rid: 1724297593403212637
-      type: {class: SetEase, ns: LSCore.AnimationsModule.Animations.Options, asm: LSCore.AnimationsModule}
-      data:
-        useCustom: 0
-        curve:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        ease: 1
-    - rid: 1724297593403212684
+    - rid: 1724297709363134646
       type: {class: ScaleAnim, ns: LSCore.AnimationsModule.Animations, asm: LSCore.AnimationsModule}
       data:
         id: 
         mainOptions:
-        - rid: 1724297593403212721
+        - rid: 1724297709363134651
         <NeedInit>k__BackingField: 1
         <Duration>k__BackingField: 0.3
         startValue: {x: 1, y: 1, z: 1}
@@ -138,17 +133,12 @@ MonoBehaviour:
         targetPath: 
         targetsPaths: []
         timeOffsetPerTarget: 0.1
-    - rid: 1724297593403212721
-      type: {class: SetLoops, ns: LSCore.AnimationsModule.Animations.Options, asm: LSCore.AnimationsModule}
-      data:
-        loopsCount: 1569325055
-        loopType: 1
-    - rid: 1724297593403212727
+    - rid: 1724297709363134647
       type: {class: ScaleAnim, ns: LSCore.AnimationsModule.Animations, asm: LSCore.AnimationsModule}
       data:
         id: 
         mainOptions:
-        - rid: 1724297593403212728
+        - rid: 1724297709363134652
         <NeedInit>k__BackingField: 1
         <Duration>k__BackingField: 0.3
         startValue: {x: 1, y: 1, z: 1}
@@ -162,17 +152,13 @@ MonoBehaviour:
         targetPath: 
         targetsPaths: []
         timeOffsetPerTarget: 0.1
-    - rid: 1724297593403212728
-      type: {class: SetLoops, ns: LSCore.AnimationsModule.Animations.Options, asm: LSCore.AnimationsModule}
-      data:
-        loopsCount: 1569325055
-        loopType: 1
-    - rid: 1724297593403212739
+    - rid: 1724297709363134648
       type: {class: TextNumberAnim, ns: LSCore.AnimationsModule.Animations.Text, asm: LSCore.AnimationsModule}
       data:
         id: 
         mainOptions:
-        - rid: 1724297593403212744
+        - rid: 1724297709363134653
+        - rid: 1724297709363134654
         <NeedInit>k__BackingField: 1
         <Duration>k__BackingField: 10
         startValue: 10
@@ -186,7 +172,16 @@ MonoBehaviour:
         targetPath: 
         targetsPaths: []
         timeOffsetPerTarget: 0.1
-    - rid: 1724297593403212744
+    - rid: 1724297709363134649
+      type: {class: AlphaAnim, ns: LSCore.AnimationsModule.Animations, asm: LSCore.AnimationsModule}
+      data:
+        id: 
+        mainOptions: []
+        canvasGroupAnim:
+          rid: -2
+        graphicAnim:
+          rid: 1724297709363134655
+    - rid: 1724297709363134650
       type: {class: SetEase, ns: LSCore.AnimationsModule.Animations.Options, asm: LSCore.AnimationsModule}
       data:
         useCustom: 0
@@ -197,6 +192,55 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         ease: 1
+    - rid: 1724297709363134651
+      type: {class: SetLoops, ns: LSCore.AnimationsModule.Animations.Options, asm: LSCore.AnimationsModule}
+      data:
+        loopsCount: 1569325055
+        loopType: 1
+    - rid: 1724297709363134652
+      type: {class: SetLoops, ns: LSCore.AnimationsModule.Animations.Options, asm: LSCore.AnimationsModule}
+      data:
+        loopsCount: 1569325055
+        loopType: 1
+    - rid: 1724297709363134653
+      type: {class: SetEase, ns: LSCore.AnimationsModule.Animations.Options, asm: LSCore.AnimationsModule}
+      data:
+        useCustom: 0
+        curve:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        ease: 1
+    - rid: 1724297709363134654
+      type: {class: OnComplete, ns: LSCore.AnimationsModule.Animations.Options, asm: LSCore.AnimationsModule}
+      data:
+        actions:
+        - rid: 1724297709363134656
+    - rid: 1724297709363134655
+      type: {class: GraphicAlphaAnim, ns: LSCore.AnimationsModule.Animations, asm: LSCore.AnimationsModule}
+      data:
+        id: 
+        mainOptions: []
+        <NeedInit>k__BackingField: 1
+        <Duration>k__BackingField: 0.3
+        startValue: 0
+        endValue: 1
+        useTargetPath: 0
+        useMultiple: 0
+        options: []
+        target: {fileID: 3904386250785129146}
+        targets: []
+        root: {fileID: 0}
+        targetPath: 
+        targetsPaths: []
+        timeOffsetPerTarget: 0.1
+    - rid: 1724297709363134656
+      type: {class: ShowWindow, ns: LSCore, asm: LSCore.WindowModule}
+      data:
+        window: Core.MatchResultWindow
+        option: 2
 --- !u!223 &1011038207463600821
 Canvas:
   m_ObjectHideFlags: 0
@@ -263,15 +307,119 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
       propertyPath: 'clickActions.actions.Array.data[0]'
-      value: 1724297593403212795
+      value: 1724297686267199819
       objectReference: {fileID: 0}
     - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
       propertyPath: 'managedReferences[1724297593403212795]'
       value: LSCore.LSDelegates LoadScene
       objectReference: {fileID: 0}
     - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: 'managedReferences[1724297686267199723]'
+      value: LSCore.AnimationsModule LSCore.AnimationsModule.AnimAction
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: 'managedReferences[1724297686267199724]'
+      value: LSCore.WindowModule LSCore.CreateOrShowCanvasView
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: 'managedReferences[1724297686267199725]'
+      value: LSCore.WindowModule LSCore.CreateOrShowCanvasView
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: 'managedReferences[1724297686267199726]'
+      value: LSCore.WindowModule LSCore.CreateOrShowCanvasView
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: 'managedReferences[1724297686267199727]'
+      value: LSCore.WindowModule LSCore.CreateOrShowCanvasView
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: 'managedReferences[1724297686267199728]'
+      value: LSCore.WindowModule LSCore.ShowWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: 'managedReferences[1724297686267199752]'
+      value: LSCore.WindowModule LSCore.ShowWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: 'managedReferences[1724297686267199819]'
+      value: LSCore.WindowModule LSCore.ShowWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199724].id
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199725].id
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199726].id
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199727].id
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
       propertyPath: managedReferences[1724297593403212795].async
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199724].option
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199724].prefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199725].option
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199725].prefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199726].option
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199726].prefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199727].option
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199727].prefab
+      value: 
+      objectReference: {fileID: 3101030846031512032, guid: 7bb027d39abbf2346ac43d9b66eb85b4, type: 3}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199728].option
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199728].window
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199752].option
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199752].window
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199819].option
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199819].window
+      value: Core.MatchResultWindow
       objectReference: {fileID: 0}
     - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
       propertyPath: managedReferences[1724297593403212795].sceneToLoad
@@ -281,6 +429,46 @@ PrefabInstance:
       propertyPath: managedReferences[1724297593403212795].useAddressables
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199724].showOnlyWhenCreated
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199725].showOnlyWhenCreated
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199726].showOnlyWhenCreated
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199727].showOnlyWhenCreated
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199723].anim.options.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199723].anim.animsData.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199724].transformActions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199725].transformActions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199726].transformActions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: managedReferences[1724297686267199727].transformActions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 219653678526939060, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
       propertyPath: m_Name
       value: NoButton
@@ -288,6 +476,10 @@ PrefabInstance:
     - target: {fileID: 3385031720588746250, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
       propertyPath: m_fontStyle
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3385031720588746250, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3385031720588746250, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
       propertyPath: localizationData.key
@@ -327,6 +519,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3802487362230489173, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
   m_PrefabInstance: {fileID: 1789379246111104176}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3904386250785129146 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3385031720588746250, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
+  m_PrefabInstance: {fileID: 1789379246111104176}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be5f5fbf10a4e68ad561e9fc015f62b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2572560553380059115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -689,3 +892,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8143991003789552193, guid: 623be12bd4367314b9e8311433882948, type: 3}
   m_PrefabInstance: {fileID: 8729520381758750869}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6983757328725076511 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1859483897607432842, guid: 623be12bd4367314b9e8311433882948, type: 3}
+  m_PrefabInstance: {fileID: 8729520381758750869}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a6708c6231b4c7fbe083ad45b3a9862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

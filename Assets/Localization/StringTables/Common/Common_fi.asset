@@ -537,6 +537,26 @@ MonoBehaviour:
     m_Localized: Elvytys
     m_Metadata:
       m_Items: []
+  - m_Id: 53433520411955200
+    m_Localized: Peli ohi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538112
+    m_Localized: Pisteet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538113
+    m_Localized: "Yrit\xE4 uudelleen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538114
+    m_Localized: Koti
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53435301984522240
+    m_Localized: "Uusi enn\xE4tys!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

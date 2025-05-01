@@ -5,7 +5,6 @@ public class Spawner : MonoBehaviour
 {
     public List<Shape> shapes;
     public List<SpriteRenderer> blockPrefabs;
-    private Shape currentShape;
 
     public Shape SpawnRandomShape(ref int? lastUsedIndex)
     {
@@ -49,9 +48,8 @@ public class Spawner : MonoBehaviour
 
         var prefab = blockPrefabs[newIndex];
         shapeInstance.BlockPrefab = prefab;
+        
         lastUsedIndex = newIndex;
-
         return shapeInstance;
     }
-
 }

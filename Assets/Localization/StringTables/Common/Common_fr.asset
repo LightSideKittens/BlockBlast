@@ -538,6 +538,26 @@ MonoBehaviour:
     m_Localized: "R\xE9animer"
     m_Metadata:
       m_Items: []
+  - m_Id: 53433520411955200
+    m_Localized: Fin du jeu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538112
+    m_Localized: Score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538113
+    m_Localized: "R\xE9essayer"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538114
+    m_Localized: Accueil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53435301984522240
+    m_Localized: Nouvelle performance !
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

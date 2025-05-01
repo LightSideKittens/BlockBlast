@@ -9,7 +9,7 @@ public class Dragger : MonoBehaviour
     private Vector3 offset;
     private Vector3 previousGhostPosition;
     [HideInInspector] public FieldManager fieldManager;
-    [SerializeField] private Vector2 touchOffset = new (0f, 4f);
+    private Vector2 touchOffset = new (0f, 4f);
     public event Action Started;
     public event Action Ended;
 

@@ -535,6 +535,26 @@ MonoBehaviour:
     m_Localized: Hidup semula
     m_Metadata:
       m_Items: []
+  - m_Id: 53433520411955200
+    m_Localized: Tamat permainan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538112
+    m_Localized: Skor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538113
+    m_Localized: Cuba lagi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538114
+    m_Localized: Laman utama
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53435301984522240
+    m_Localized: Rekod baharu!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -536,6 +536,26 @@ MonoBehaviour:
     m_Localized: Ressuscitar
     m_Metadata:
       m_Items: []
+  - m_Id: 53433520411955200
+    m_Localized: Fim de jogo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538112
+    m_Localized: "Pontua\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538113
+    m_Localized: Tentar novamente
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538114
+    m_Localized: "In\xEDcio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53435301984522240
+    m_Localized: Novo recorde!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

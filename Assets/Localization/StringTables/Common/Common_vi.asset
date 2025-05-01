@@ -544,6 +544,26 @@ MonoBehaviour:
     m_Localized: "H\u1ED3i sinh"
     m_Metadata:
       m_Items: []
+  - m_Id: 53433520411955200
+    m_Localized: "K\u1EBFt th\xFAc tr\xF2 ch\u01A1i"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538112
+    m_Localized: "\u0110i\u1EC3m s\u1ED1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538113
+    m_Localized: "Ch\u01A1i l\u1EA1i"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53433520424538114
+    m_Localized: "Trang ch\u1EE7"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53435301984522240
+    m_Localized: "K\u1EF7 l\u1EE5c m\u1EDBi!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
