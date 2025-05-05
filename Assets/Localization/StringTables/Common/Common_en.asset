@@ -555,6 +555,10 @@ MonoBehaviour:
     m_Localized: New Best!
     m_Metadata:
       m_Items: []
+  - m_Id: 55324379206176768
+    m_Localized: Best score
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

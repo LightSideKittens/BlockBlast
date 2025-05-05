@@ -28,7 +28,7 @@ MonoBehaviour:
     - Locale-fi
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 801e98f6ec2b546478cfdd09e9d9eab3
-    m_Address: Heroes_fi
+    m_Address: BlockBlast_fi
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-fi

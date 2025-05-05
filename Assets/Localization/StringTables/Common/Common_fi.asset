@@ -557,6 +557,10 @@ MonoBehaviour:
     m_Localized: "Uusi enn\xE4tys!"
     m_Metadata:
       m_Items: []
+  - m_Id: 55324379206176768
+    m_Localized: "Paras pistem\xE4\xE4r\xE4"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

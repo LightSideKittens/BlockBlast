@@ -22,7 +22,7 @@ MonoBehaviour:
     - Locale-zh-Hans
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9d03c143dc21b6e4a8c69fb0620a6dc8
-    m_Address: Heroes_zh-Hans
+    m_Address: BlockBlast_zh-Hans
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-zh-Hans

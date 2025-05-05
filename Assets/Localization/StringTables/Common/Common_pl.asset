@@ -557,6 +557,10 @@ MonoBehaviour:
     m_Localized: Nowy rekord!
     m_Metadata:
       m_Items: []
+  - m_Id: 55324379206176768
+    m_Localized: Wynik najlepszy
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

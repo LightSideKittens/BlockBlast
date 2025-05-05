@@ -16,7 +16,7 @@ MonoBehaviour:
   m_GUID: 2cbd7df02a040df42afbc646f2dca64b
   m_SerializeEntries:
   - m_GUID: 61005f9a54f592b42911e12602f2110b
-    m_Address: Heroes_fr
+    m_Address: BlockBlast_fr
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-fr

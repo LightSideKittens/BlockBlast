@@ -22,7 +22,7 @@ MonoBehaviour:
     - Locale-pt
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dc6da1a91316e5547ba3bea0b0523d56
-    m_Address: Heroes_pt
+    m_Address: BlockBlast_pt
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pt

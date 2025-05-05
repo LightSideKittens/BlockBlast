@@ -16,7 +16,7 @@ MonoBehaviour:
   m_GUID: 34f8c68ed468cdc49a7e4f290042e7dd
   m_SerializeEntries:
   - m_GUID: 18591127bfacc2d458a5f30457dd352c
-    m_Address: Heroes_zh-Hant
+    m_Address: BlockBlast_zh-Hant
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-zh-Hant

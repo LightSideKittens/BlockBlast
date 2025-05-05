@@ -547,6 +547,10 @@ MonoBehaviour:
     m_Key: newBest
     m_Metadata:
       m_Items: []
+  - m_Id: 55324379206176768
+    m_Key: bestScore
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
