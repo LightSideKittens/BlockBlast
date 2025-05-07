@@ -529,11 +529,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 52799009412141057
-    m_Localized: Continuar?
+    m_Localized: Continuar ?
     m_Metadata:
       m_Items: []
   - m_Id: 52799563924295680
-    m_Localized: Ressuscitar
+    m_Localized: Reviver
     m_Metadata:
       m_Items: []
   - m_Id: 53433520411955200
@@ -558,6 +558,38 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 55324379206176768
     m_Localized: "Melhor pontua\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914411921408
+    m_Localized: Novo jogo (reiniciar progresso)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030272
+    m_Localized: Excluir perfil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030273
+    m_Localized: Iniciar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030274
+    m_Localized: Excluir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56063443421155328
+    m_Localized: Pausa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945763229696
+    m_Localized: "Informa\xE7\xF5es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812608
+    m_Localized: "Notifica\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812609
+    m_Localized: "Este recurso estar\xE1 dispon\xEDvel em uma das pr\xF3ximas atualiza\xE7\xF5es."
     m_Metadata:
       m_Items: []
   references:

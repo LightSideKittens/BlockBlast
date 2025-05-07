@@ -127,7 +127,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 991213905825802
-    m_Localized: "Informaci\xF3n"
+    m_Localized: Info
     m_Metadata:
       m_Items: []
   - m_Id: 991213905825803
@@ -529,7 +529,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 52799009412141057
-    m_Localized: "\xBFContinuar?"
+    m_Localized: "\xBFContinuar ?"
     m_Metadata:
       m_Items: []
   - m_Id: 52799563924295680
@@ -553,11 +553,44 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 53435301984522240
-    m_Localized: "\xA1Nuevo r\xE9cord!"
+    m_Localized: "\xA1Nuevo r\xE9cord !"
     m_Metadata:
       m_Items: []
   - m_Id: 55324379206176768
     m_Localized: "Mejor puntuaci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914411921408
+    m_Localized: Nuevo juego (reiniciar progreso)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030272
+    m_Localized: Eliminar perfil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030273
+    m_Localized: Iniciar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030274
+    m_Localized: Eliminar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56063443421155328
+    m_Localized: Pausa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945763229696
+    m_Localized: "Informaci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812608
+    m_Localized: "Notificaci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812609
+    m_Localized: "Esta funci\xF3n estar\xE1 disponible en una de las pr\xF3ximas
+      actualizaciones."
     m_Metadata:
       m_Items: []
   references:

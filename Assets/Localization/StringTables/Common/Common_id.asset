@@ -127,7 +127,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 991213905825802
-    m_Localized: Informasi
+    m_Localized: Info
     m_Metadata:
       m_Items: []
   - m_Id: 991213905825803
@@ -529,15 +529,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 52799009412141057
-    m_Localized: Lanjutkan?
+    m_Localized: Lanjutkan ?
     m_Metadata:
       m_Items: []
   - m_Id: 52799563924295680
-    m_Localized: Revive
+    m_Localized: Hidupkan kembali
     m_Metadata:
       m_Items: []
   - m_Id: 53433520411955200
-    m_Localized: Game Over
+    m_Localized: Permainan selesai
     m_Metadata:
       m_Items: []
   - m_Id: 53433520424538112
@@ -558,6 +558,38 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 55324379206176768
     m_Localized: Skor terbaik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914411921408
+    m_Localized: Gim baru (atur ulang progres)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030272
+    m_Localized: Hapus profil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030273
+    m_Localized: Mulai
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030274
+    m_Localized: Hapus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56063443421155328
+    m_Localized: Jeda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945763229696
+    m_Localized: Informasi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812608
+    m_Localized: Notifikasi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812609
+    m_Localized: Fitur ini akan tersedia dalam salah satu pembaruan mendatang.
     m_Metadata:
       m_Items: []
   references:

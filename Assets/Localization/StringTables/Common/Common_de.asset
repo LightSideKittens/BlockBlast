@@ -127,7 +127,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 991213905825802
-    m_Localized: Details
+    m_Localized: Info
     m_Metadata:
       m_Items: []
   - m_Id: 991213905825803
@@ -529,7 +529,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 52799009412141057
-    m_Localized: Weitermachen?
+    m_Localized: Fortfahren ?
     m_Metadata:
       m_Items: []
   - m_Id: 52799563924295680
@@ -553,11 +553,44 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 53435301984522240
-    m_Localized: Neuer Rekord!
+    m_Localized: Neuer Rekord !
     m_Metadata:
       m_Items: []
   - m_Id: 55324379206176768
-    m_Localized: Bester Punktestand
+    m_Localized: Beste Punktzahl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914411921408
+    m_Localized: "Neues Spiel (Fortschritt zur\xFCcksetzen)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030272
+    m_Localized: "Profil l\xF6schen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030273
+    m_Localized: Starten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030274
+    m_Localized: "L\xF6schen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56063443421155328
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945763229696
+    m_Localized: Details
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812608
+    m_Localized: Benachrichtigung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812609
+    m_Localized: "Diese Funktion wird in einem der n\xE4chsten Updates verf\xFCgbar
+      sein."
     m_Metadata:
       m_Items: []
   references:

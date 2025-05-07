@@ -127,7 +127,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 991213905825802
-    m_Localized: Information
+    m_Localized: Info
     m_Metadata:
       m_Items: []
   - m_Id: 991213905825803
@@ -557,6 +557,38 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 55324379206176768
     m_Localized: Best score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914411921408
+    m_Localized: New Game (reset progress)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030272
+    m_Localized: Delete Profile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030273
+    m_Localized: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030274
+    m_Localized: Delete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56063443421155328
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945763229696
+    m_Localized: Information
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812608
+    m_Localized: Notification
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812609
+    m_Localized: This feature will be available in one of the upcoming updates.
     m_Metadata:
       m_Items: []
   references:

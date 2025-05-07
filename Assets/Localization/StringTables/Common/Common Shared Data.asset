@@ -163,8 +163,8 @@ MonoBehaviour:
     m_Key: buyArg
     m_Metadata:
       m_Items: []
-  - m_Id: 991213905825802
-    m_Key: info
+  - m_Id: 56067945763229696
+    m_Key: information
     m_Metadata:
       m_Items: []
   - m_Id: 1745601175801857
@@ -527,6 +527,10 @@ MonoBehaviour:
     m_Key: revive
     m_Metadata:
       m_Items: []
+  - m_Id: 56063443421155328
+    m_Key: pause
+    m_Metadata:
+      m_Items: []
   - m_Id: 53433520411955200
     m_Key: gameOver
     m_Metadata:
@@ -549,6 +553,34 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 55324379206176768
     m_Key: bestScore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914411921408
+    m_Key: newProfile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030272
+    m_Key: deleteProfile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030273
+    m_Key: start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030274
+    m_Key: delete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812608
+    m_Key: notification
+    m_Metadata:
+      m_Items: []
+  - m_Id: 991213905825802
+    m_Key: info
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812609
+    m_Key: comongSoonDescription
     m_Metadata:
       m_Items: []
   m_Metadata:

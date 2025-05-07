@@ -528,7 +528,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 52799009412141057
-    m_Localized: Teruskan?
+    m_Localized: Teruskan ?
     m_Metadata:
       m_Items: []
   - m_Id: 52799563924295680
@@ -557,6 +557,38 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 55324379206176768
     m_Localized: Skor terbaik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914411921408
+    m_Localized: Permainan baru (tetapkan semula kemajuan)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030272
+    m_Localized: Padam profil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030273
+    m_Localized: Mula
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030274
+    m_Localized: Padam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56063443421155328
+    m_Localized: Jeda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945763229696
+    m_Localized: Maklumat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812608
+    m_Localized: Pemberitahuan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812609
+    m_Localized: Ciri ini akan tersedia dalam salah satu kemas kini yang akan datang.
     m_Metadata:
       m_Items: []
   references:

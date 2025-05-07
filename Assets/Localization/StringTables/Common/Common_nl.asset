@@ -529,11 +529,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 52799009412141057
-    m_Localized: Doorgaan?
+    m_Localized: Doorgaan ?
     m_Metadata:
       m_Items: []
   - m_Id: 52799563924295680
-    m_Localized: Wederopstanding
+    m_Localized: Herleven
     m_Metadata:
       m_Items: []
   - m_Id: 53433520411955200
@@ -549,7 +549,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 53433520424538114
-    m_Localized: Home
+    m_Localized: Startpagina
     m_Metadata:
       m_Items: []
   - m_Id: 53435301984522240
@@ -558,6 +558,38 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 55324379206176768
     m_Localized: Beste score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914411921408
+    m_Localized: Nieuw spel (voortgang resetten)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030272
+    m_Localized: Profiel verwijderen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030273
+    m_Localized: Starten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030274
+    m_Localized: Verwijderen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56063443421155328
+    m_Localized: Pauze
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945763229696
+    m_Localized: Informatie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812608
+    m_Localized: Melding
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812609
+    m_Localized: Deze functie zal beschikbaar zijn in een van de komende updates.
     m_Metadata:
       m_Items: []
   references:

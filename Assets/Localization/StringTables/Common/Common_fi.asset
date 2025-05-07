@@ -127,7 +127,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 991213905825802
-    m_Localized: Tietoja
+    m_Localized: Tiedot
     m_Metadata:
       m_Items: []
   - m_Id: 991213905825803
@@ -530,11 +530,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 52799009412141057
-    m_Localized: Jatketaanko?
+    m_Localized: Jatketaanko ?
     m_Metadata:
       m_Items: []
   - m_Id: 52799563924295680
-    m_Localized: Elvytys
+    m_Localized: "Elvyt\xE4"
     m_Metadata:
       m_Items: []
   - m_Id: 53433520411955200
@@ -550,7 +550,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 53433520424538114
-    m_Localized: Koti
+    m_Localized: Etusivu
     m_Metadata:
       m_Items: []
   - m_Id: 53435301984522240
@@ -559,6 +559,38 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 55324379206176768
     m_Localized: "Paras pistem\xE4\xE4r\xE4"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914411921408
+    m_Localized: Uusi peli (nollaa eteneminen)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030272
+    m_Localized: Profiilin poisto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030273
+    m_Localized: Aloita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030274
+    m_Localized: Poista
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56063443421155328
+    m_Localized: Tauko
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945763229696
+    m_Localized: Tietoja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812608
+    m_Localized: Ilmoitus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812609
+    m_Localized: "T\xE4m\xE4 ominaisuus tulee saataville jossain tulevista p\xE4ivityksist\xE4."
     m_Metadata:
       m_Items: []
   references:

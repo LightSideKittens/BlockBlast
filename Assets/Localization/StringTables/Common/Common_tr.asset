@@ -532,11 +532,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 52799009412141057
-    m_Localized: Devam etmek?
+    m_Localized: Devam etmek ?
     m_Metadata:
       m_Items: []
   - m_Id: 52799563924295680
-    m_Localized: "Canland\u0131rmak"
+    m_Localized: "Canland\u0131r"
     m_Metadata:
       m_Items: []
   - m_Id: 53433520411955200
@@ -552,7 +552,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 53433520424538114
-    m_Localized: "Ana Men\xFC"
+    m_Localized: Ana Sayfa
     m_Metadata:
       m_Items: []
   - m_Id: 53435301984522240
@@ -561,6 +561,39 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 55324379206176768
     m_Localized: En iyi skor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914411921408
+    m_Localized: "Yeni oyun (ilerlemeyi s\u0131f\u0131rla)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030272
+    m_Localized: Profil sil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030273
+    m_Localized: "Ba\u015Fla"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030274
+    m_Localized: Sil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56063443421155328
+    m_Localized: Duraklat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945763229696
+    m_Localized: Bilgi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812608
+    m_Localized: Bildirim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812609
+    m_Localized: "Bu \xF6zellik yak\u0131nda gelecek g\xFCncellemelerden birinde
+      kullan\u0131labilir olacak."
     m_Metadata:
       m_Items: []
   references:

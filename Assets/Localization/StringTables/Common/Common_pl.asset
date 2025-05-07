@@ -127,7 +127,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 991213905825802
-    m_Localized: Informacje
+    m_Localized: Informacja
     m_Metadata:
       m_Items: []
   - m_Id: 991213905825803
@@ -530,7 +530,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 52799009412141057
-    m_Localized: "Kontynuowa\u0107?"
+    m_Localized: "Kontynuowa\u0107 ?"
     m_Metadata:
       m_Items: []
   - m_Id: 52799563924295680
@@ -558,7 +558,40 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 55324379206176768
-    m_Localized: Wynik najlepszy
+    m_Localized: Najlepszy wynik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914411921408
+    m_Localized: "Nowa gra (zresetuj post\u0119p)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030272
+    m_Localized: "Usu\u0144 profil"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030273
+    m_Localized: Rozpocznij
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56051914479030274
+    m_Localized: "Usu\u0144"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56063443421155328
+    m_Localized: Pauza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945763229696
+    m_Localized: Informacje
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812608
+    m_Localized: Powiadomienie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56067945775812609
+    m_Localized: "Funkcja b\u0119dzie dost\u0119pna w jednej z nadchodz\u0105cych
+      aktualizacji."
     m_Metadata:
       m_Items: []
   references:
