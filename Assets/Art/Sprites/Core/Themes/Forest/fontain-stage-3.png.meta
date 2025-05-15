@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fontain-stage-3_0: -3284960522986888164
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

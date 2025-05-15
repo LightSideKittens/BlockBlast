@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      flower-box-stage-3_0: -2019841081629784362
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -143,6 +143,10 @@ MonoBehaviour:
     m_Key: continue
     m_Metadata:
       m_Items: []
+  - m_Id: 58040343920168960
+    m_Key: tapToSkip
+    m_Metadata:
+      m_Items: []
   - m_Id: 16468547572125698
     m_Key: exit
     m_Metadata:
@@ -291,6 +295,14 @@ MonoBehaviour:
     m_Key: spesialOffers
     m_Metadata:
       m_Items: []
+  - m_Id: 56757973891993600
+    m_Key: locations
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973975879680
+    m_Key: lockedLocations
+    m_Metadata:
+      m_Items: []
   - m_Id: 703562262827013
     m_Key: news
     m_Metadata:
@@ -399,10 +411,6 @@ MonoBehaviour:
     m_Key: systemSettings
     m_Metadata:
       m_Items: []
-  - m_Id: 991213910020101
-    m_Key: location
-    m_Metadata:
-      m_Items: []
   - m_Id: 991213910020102
     m_Key: community
     m_Metadata:
@@ -429,70 +437,6 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1454471720783872
     m_Key: next
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375296
-    m_Key: orion
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375297
-    m_Key: andromeda
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375298
-    m_Key: cassiopeia
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375299
-    m_Key: sirius
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375300
-    m_Key: phoenix
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375301
-    m_Key: helios
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569600
-    m_Key: elysium
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569601
-    m_Key: theia
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569602
-    m_Key: cronos
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569603
-    m_Key: custod
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991291027456
-    m_Key: goldTooltip
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416064
-    m_Key: crystalsTooltip
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416065
-    m_Key: starsTooltip
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137152
-    m_Key: trophiesTooltip
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137153
-    m_Key: levelTooltip
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16973315541356544
-    m_Key: astroboostRewards.description
     m_Metadata:
       m_Items: []
   - m_Id: 17190857237123072
@@ -579,8 +523,44 @@ MonoBehaviour:
     m_Key: info
     m_Metadata:
       m_Items: []
-  - m_Id: 56067945775812609
-    m_Key: comongSoonDescription
+  - m_Id: 56757973988462592
+    m_Key: comingSoonDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723392
+    m_Key: locationProgress
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723393
+    m_Key: levelX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723394
+    m_Key: classic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723395
+    m_Key: goal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301248
+    m_Key: selectBoosters
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301249
+    m_Key: moves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301250
+    m_Key: time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301251
+    m_Key: reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301252
+    m_Key: forest
     m_Metadata:
       m_Items: []
   m_Metadata:

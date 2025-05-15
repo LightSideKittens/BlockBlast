@@ -191,10 +191,6 @@ MonoBehaviour:
     m_Localized: Systeeminstellingen
     m_Metadata:
       m_Items: []
-  - m_Id: 991213910020101
-    m_Localized: Locatie
-    m_Metadata:
-      m_Items: []
   - m_Id: 991213910020102
     m_Localized: Community
     m_Metadata:
@@ -383,46 +379,6 @@ MonoBehaviour:
     m_Localized: +{0}
     m_Metadata:
       m_Items: []
-  - m_Id: 2113075096375296
-    m_Localized: Orion
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375297
-    m_Localized: Andromeda
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375298
-    m_Localized: Cassiopeia
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375299
-    m_Localized: Sirius
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375300
-    m_Localized: Feniks
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375301
-    m_Localized: Helios
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569600
-    m_Localized: Elysium
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569601
-    m_Localized: Theia
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569602
-    m_Localized: Cronos
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569603
-    m_Localized: Custod
-    m_Metadata:
-      m_Items: []
   - m_Id: 2210991253278720
     m_Localized: <material={0}>{1}</material>
     m_Metadata:
@@ -447,33 +403,8 @@ MonoBehaviour:
     m_Localized: <cspace={0}em>{1}</gradient>
     m_Metadata:
       m_Items: []
-  - m_Id: 2210991291027456
-    m_Localized: '{0}Goud{1} is nodig om de helden te verbeteren.\n\nGoud kan verdiend
-      worden in gevechten, in {2}, in kisten.'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416064
-    m_Localized: '{0}Kristallen{1} zijn nodig om de helden en andere dingen in de
-      winkel te kopen.\n\nKristallen kunnen worden verkregen in de {2} of gekocht
-      in de winkel voor echt geld.'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416065
-    m_Localized: '{0}Sterren{1} zijn nodig om de helden te verbeteren.\n\nSterren
-      kunnen worden verdiend in gevechten, in {2}, in kisten.'
-    m_Metadata:
-      m_Items: []
   - m_Id: 2272599220473856
     m_Localized: Max. level!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137152
-    m_Localized: "Verzamel trofee\xEBn voor deze held door spellen te winnen van
-      andere spelers."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137153
-    m_Localized: Upgrade je held! Verhoog zijn gezondheid, aanvalsschade.
     m_Metadata:
       m_Items: []
   - m_Id: 16468547517599744
@@ -490,10 +421,6 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 16468547572125698
     m_Localized: Sluiten
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16973315541356544
-    m_Localized: Koop {0} en ontvang meer beloningen.
     m_Metadata:
       m_Items: []
   - m_Id: 17190857224540160
@@ -588,8 +515,56 @@ MonoBehaviour:
     m_Localized: Melding
     m_Metadata:
       m_Items: []
-  - m_Id: 56067945775812609
+  - m_Id: 56757973891993600
+    m_Localized: Locaties
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973975879680
+    m_Localized: Vergrendelde locaties
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973988462592
     m_Localized: Deze functie zal beschikbaar zijn in een van de komende updates.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343920168960
+    m_Localized: Tik om over te slaan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723392
+    m_Localized: Locatievoortgang
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723393
+    m_Localized: Niveau {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723394
+    m_Localized: Klassiek
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723395
+    m_Localized: Doel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301248
+    m_Localized: 'Selecteer boosters:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301249
+    m_Localized: Zetten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301250
+    m_Localized: Tijd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301251
+    m_Localized: Beloning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301252
+    m_Localized: Bos
     m_Metadata:
       m_Items: []
   references:

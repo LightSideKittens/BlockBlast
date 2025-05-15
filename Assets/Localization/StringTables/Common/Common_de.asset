@@ -191,10 +191,6 @@ MonoBehaviour:
     m_Localized: Systemeinstellungen
     m_Metadata:
       m_Items: []
-  - m_Id: 991213910020101
-    m_Localized: Standort
-    m_Metadata:
-      m_Items: []
   - m_Id: 991213910020102
     m_Localized: Community
     m_Metadata:
@@ -383,46 +379,6 @@ MonoBehaviour:
     m_Localized: +{0}
     m_Metadata:
       m_Items: []
-  - m_Id: 2113075096375296
-    m_Localized: Orion
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375297
-    m_Localized: Andromeda
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375298
-    m_Localized: Kassiopeia
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375299
-    m_Localized: Sirius
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375300
-    m_Localized: "Ph\xF6nix"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375301
-    m_Localized: Helios
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569600
-    m_Localized: Elysium
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569601
-    m_Localized: Theia
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569602
-    m_Localized: Kronos
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569603
-    m_Localized: Custod
-    m_Metadata:
-      m_Items: []
   - m_Id: 2210991253278720
     m_Localized: <material={0}>{1}</material>
     m_Metadata:
@@ -447,33 +403,8 @@ MonoBehaviour:
     m_Localized: <cspace={0}em>{1}</gradient>
     m_Metadata:
       m_Items: []
-  - m_Id: 2210991291027456
-    m_Localized: "{0}Gold{1} wird ben\xF6tigt, um die Helden zu verbessern.\\n\\nGold
-      kann in K\xE4mpfen, in {2}, in Truhen verdient werden."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416064
-    m_Localized: "{0}Kristalle{1} werden ben\xF6tigt, um die Helden und andere Dinge
-      im Laden zu kaufen.\\n\\nKristalle k\xF6nnen im {2} erhalten oder im Laden
-      f\xFCr echtes Geld gekauft werden."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416065
-    m_Localized: "{0}Sterne{1} werden ben\xF6tigt, um die Helden zu verbessern.\\n\\nSterne
-      k\xF6nnen in K\xE4mpfen, in {2}, in Truhen verdient werden."
-    m_Metadata:
-      m_Items: []
   - m_Id: 2272599220473856
     m_Localized: Max. level!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137152
-    m_Localized: "Sammle Troph\xE4en f\xFCr diesen Helden, indem du Spiele gegen
-      andere Spieler gewinnst."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137153
-    m_Localized: "Verbessere deinen Helden! Erh\xF6he seine Gesundheit, Angriffsschaden."
     m_Metadata:
       m_Items: []
   - m_Id: 16468547517599744
@@ -490,10 +421,6 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 16468547572125698
     m_Localized: Verlassen
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16973315541356544
-    m_Localized: Kaufen Sie {0} und erhalten Sie mehr Belohnungen.
     m_Metadata:
       m_Items: []
   - m_Id: 17190857224540160
@@ -588,9 +515,57 @@ MonoBehaviour:
     m_Localized: Benachrichtigung
     m_Metadata:
       m_Items: []
-  - m_Id: 56067945775812609
+  - m_Id: 56757973891993600
+    m_Localized: Orte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973975879680
+    m_Localized: Gesperrte Orte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973988462592
     m_Localized: "Diese Funktion wird in einem der n\xE4chsten Updates verf\xFCgbar
       sein."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343920168960
+    m_Localized: "Zum \xDCberspringen tippen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723392
+    m_Localized: Fortschritt des ortes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723393
+    m_Localized: Level {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723394
+    m_Localized: Klassisch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723395
+    m_Localized: Ziel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301248
+    m_Localized: "Booster ausw\xE4hlen:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301249
+    m_Localized: "Z\xFCge"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301250
+    m_Localized: Zeit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301251
+    m_Localized: Belohnung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301252
+    m_Localized: Wald
     m_Metadata:
       m_Items: []
   references:

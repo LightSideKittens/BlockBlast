@@ -191,10 +191,6 @@ MonoBehaviour:
     m_Localized: "J\xE4rjestelm\xE4asetukset"
     m_Metadata:
       m_Items: []
-  - m_Id: 991213910020101
-    m_Localized: Sijainti
-    m_Metadata:
-      m_Items: []
   - m_Id: 991213910020102
     m_Localized: "Yhteis\xF6"
     m_Metadata:
@@ -383,46 +379,6 @@ MonoBehaviour:
     m_Localized: +{0}
     m_Metadata:
       m_Items: []
-  - m_Id: 2113075096375296
-    m_Localized: Orion
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375297
-    m_Localized: Andromeda
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375298
-    m_Localized: Kasiopeja
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375299
-    m_Localized: Sirius
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375300
-    m_Localized: Feeniks
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375301
-    m_Localized: Helios
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569600
-    m_Localized: Elysium
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569601
-    m_Localized: Theia
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569602
-    m_Localized: Kronos
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569603
-    m_Localized: Custod
-    m_Metadata:
-      m_Items: []
   - m_Id: 2210991253278720
     m_Localized: <material={0}>{1}</material>
     m_Metadata:
@@ -447,34 +403,8 @@ MonoBehaviour:
     m_Localized: <cspace={0}em>{1}</gradient>
     m_Metadata:
       m_Items: []
-  - m_Id: 2210991291027456
-    m_Localized: '{0}Kultaa{1} tarvitaan sankareiden parantamiseen.\n\nKultaa voi
-      ansaita taisteluissa, {2}issa, arkuissa.'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416064
-    m_Localized: '{0}Kristallit{1} tarvitaan sankareiden ja muiden asioiden ostamiseen
-      kaupasta.\n\nKristalleja voidaan saada {2}issa tai ostaa kaupasta oikealla
-      rahalla.'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416065
-    m_Localized: "{0}T\xE4hdet{1} ovat tarpeen sankareiden parantamiseen.\\n\\nT\xE4hti\xE4
-      voi ansaita taisteluissa, {2}issa, arkuissa."
-    m_Metadata:
-      m_Items: []
   - m_Id: 2272599220473856
     m_Localized: Korkein taso!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137152
-    m_Localized: "Ker\xE4\xE4 t\xE4lle sankarille pokaaleja voittamalla pelej\xE4
-      muita pelaajia vastaan."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137153
-    m_Localized: "P\xE4ivit\xE4 sankarisi! Lis\xE4\xE4 h\xE4nen terveytt\xE4\xE4n
-      ja hy\xF6kk\xE4ysvahinkoa."
     m_Metadata:
       m_Items: []
   - m_Id: 16468547517599744
@@ -491,10 +421,6 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 16468547572125698
     m_Localized: Poistu
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16973315541356544
-    m_Localized: "Osta {0} ja vastaanota lis\xE4\xE4 palkintoja."
     m_Metadata:
       m_Items: []
   - m_Id: 17190857224540160
@@ -589,8 +515,56 @@ MonoBehaviour:
     m_Localized: Ilmoitus
     m_Metadata:
       m_Items: []
-  - m_Id: 56067945775812609
+  - m_Id: 56757973891993600
+    m_Localized: Sijainnit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973975879680
+    m_Localized: Lukitut sijainnit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973988462592
     m_Localized: "T\xE4m\xE4 ominaisuus tulee saataville jossain tulevista p\xE4ivityksist\xE4."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343920168960
+    m_Localized: Tapauta ohittaaksesi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723392
+    m_Localized: Sijainnin edistyminen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723393
+    m_Localized: Taso {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723394
+    m_Localized: Klassinen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723395
+    m_Localized: Tavoite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301248
+    m_Localized: 'Valitse tehosteet:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301249
+    m_Localized: Siirrot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301250
+    m_Localized: Aika
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301251
+    m_Localized: Palkinto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301252
+    m_Localized: "Mets\xE4"
     m_Metadata:
       m_Items: []
   references:

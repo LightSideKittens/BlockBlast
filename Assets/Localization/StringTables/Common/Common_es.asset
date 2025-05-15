@@ -191,10 +191,6 @@ MonoBehaviour:
     m_Localized: "Configuraci\xF3n del sistema"
     m_Metadata:
       m_Items: []
-  - m_Id: 991213910020101
-    m_Localized: "Ubicaci\xF3n"
-    m_Metadata:
-      m_Items: []
   - m_Id: 991213910020102
     m_Localized: Comunidad
     m_Metadata:
@@ -383,46 +379,6 @@ MonoBehaviour:
     m_Localized: +{0}
     m_Metadata:
       m_Items: []
-  - m_Id: 2113075096375296
-    m_Localized: "Ori\xF3n"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375297
-    m_Localized: "Andr\xF3meda"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375298
-    m_Localized: Casiopea
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375299
-    m_Localized: Sirio
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375300
-    m_Localized: "F\xE9nix"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375301
-    m_Localized: Helios
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569600
-    m_Localized: "El\xEDseo"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569601
-    m_Localized: Teia
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569602
-    m_Localized: Cronos
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569603
-    m_Localized: Custod
-    m_Metadata:
-      m_Items: []
   - m_Id: 2210991253278720
     m_Localized: <material={0}>{1}</material>
     m_Metadata:
@@ -447,33 +403,8 @@ MonoBehaviour:
     m_Localized: <cspace={0}em>{1}</gradient>
     m_Metadata:
       m_Items: []
-  - m_Id: 2210991291027456
-    m_Localized: "{0}Oro{1} es necesario para mejorar a los h\xE9roes.\\n\\nEl oro
-      se puede ganar en batallas, en {2}, en cofres."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416064
-    m_Localized: "{0}Cristales{1} son necesarios para comprar los h\xE9roes y otras
-      cosas en la tienda.\\n\\nLos cristales se pueden obtener en el {2} o comprarse
-      en la tienda con dinero real."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416065
-    m_Localized: "{0}Estrellas{1} son necesarias para mejorar a los h\xE9roes.\\n\\nLas
-      estrellas se pueden ganar en batallas, en {2}, en cofres."
-    m_Metadata:
-      m_Items: []
   - m_Id: 2272599220473856
     m_Localized: "\xA1Nivel m\xE1ximo!"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137152
-    m_Localized: "Recoge Trofeos para este H\xE9roe ganando partidas contra otros
-      jugadores."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137153
-    m_Localized: "\xA1Mejora a tu H\xE9roe! Aumenta su Salud, Da\xF1o de Ataque."
     m_Metadata:
       m_Items: []
   - m_Id: 16468547517599744
@@ -490,10 +421,6 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 16468547572125698
     m_Localized: Salir
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16973315541356544
-    m_Localized: "Compra {0} y recibe m\xE1s recompensas."
     m_Metadata:
       m_Items: []
   - m_Id: 17190857224540160
@@ -588,9 +515,57 @@ MonoBehaviour:
     m_Localized: "Notificaci\xF3n"
     m_Metadata:
       m_Items: []
-  - m_Id: 56067945775812609
+  - m_Id: 56757973891993600
+    m_Localized: Ubicaciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973975879680
+    m_Localized: Ubicaciones bloqueadas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973988462592
     m_Localized: "Esta funci\xF3n estar\xE1 disponible en una de las pr\xF3ximas
       actualizaciones."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343920168960
+    m_Localized: Pulsa para omitir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723392
+    m_Localized: "Progreso de la ubicaci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723393
+    m_Localized: Nivel {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723394
+    m_Localized: "Cl\xE1sico"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723395
+    m_Localized: Objetivo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301248
+    m_Localized: 'Selecciona potenciadores:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301249
+    m_Localized: Movimientos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301250
+    m_Localized: Tiempo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301251
+    m_Localized: Recompensa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301252
+    m_Localized: Bosque
     m_Metadata:
       m_Items: []
   references:

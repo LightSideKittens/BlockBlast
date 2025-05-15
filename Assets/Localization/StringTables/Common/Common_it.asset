@@ -191,10 +191,6 @@ MonoBehaviour:
     m_Localized: Impostazioni di sistema
     m_Metadata:
       m_Items: []
-  - m_Id: 991213910020101
-    m_Localized: Ubicazione
-    m_Metadata:
-      m_Items: []
   - m_Id: 991213910020102
     m_Localized: Community
     m_Metadata:
@@ -383,46 +379,6 @@ MonoBehaviour:
     m_Localized: +{0}
     m_Metadata:
       m_Items: []
-  - m_Id: 2113075096375296
-    m_Localized: Orione
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375297
-    m_Localized: Andromeda
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375298
-    m_Localized: Cassiopea
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375299
-    m_Localized: Sirio
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375300
-    m_Localized: Fenice
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375301
-    m_Localized: Elio
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569600
-    m_Localized: Elysium
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569601
-    m_Localized: Theia
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569602
-    m_Localized: Crono
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569603
-    m_Localized: Custod
-    m_Metadata:
-      m_Items: []
   - m_Id: 2210991253278720
     m_Localized: <material={0}>{1}</material>
     m_Metadata:
@@ -447,32 +403,8 @@ MonoBehaviour:
     m_Localized: <cspace={0}em>{1}</gradient>
     m_Metadata:
       m_Items: []
-  - m_Id: 2210991291027456
-    m_Localized: "{0}Oro{1} \xE8 necessario per migliorare gli eroi.\\n\\nL'oro pu\xF2
-      essere guadagnato nelle battaglie, in {2}, nei forzieri."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416064
-    m_Localized: '{0}Cristalli{1} sono necessari per acquistare gli eroi e altre
-      cose nel negozio.\n\nI cristalli possono essere ottenuti nell''{2} o acquistati
-      nel negozio con denaro reale.'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416065
-    m_Localized: '{0}Stelle{1} sono necessarie per migliorare gli eroi.\n\nLe stelle
-      possono essere guadagnate nelle battaglie, in {2}, nei forzieri.'
-    m_Metadata:
-      m_Items: []
   - m_Id: 2272599220473856
     m_Localized: Livello max
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137152
-    m_Localized: Raccogli Trofei per questo Eroe vincendo partite contro altri giocatori.
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137153
-    m_Localized: Potenzia il tuo Eroe! Aumenta la sua Salute, Danno d'Attacco.
     m_Metadata:
       m_Items: []
   - m_Id: 16468547517599744
@@ -489,10 +421,6 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 16468547572125698
     m_Localized: Esci
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16973315541356544
-    m_Localized: "Acquista {0} e ricevi pi\xF9 ricompense."
     m_Metadata:
       m_Items: []
   - m_Id: 17190857224540160
@@ -587,8 +515,56 @@ MonoBehaviour:
     m_Localized: Notifica
     m_Metadata:
       m_Items: []
-  - m_Id: 56067945775812609
+  - m_Id: 56757973891993600
+    m_Localized: Luoghi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973975879680
+    m_Localized: Luoghi bloccati
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973988462592
     m_Localized: "Questa funzione sar\xE0 disponibile in uno dei prossimi aggiornamenti."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343920168960
+    m_Localized: Tocca per saltare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723392
+    m_Localized: Avanzamento della posizione
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723393
+    m_Localized: Livello {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723394
+    m_Localized: Classico
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723395
+    m_Localized: Obiettivo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301248
+    m_Localized: 'Seleziona i booster:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301249
+    m_Localized: Mosse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301250
+    m_Localized: Tempo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301251
+    m_Localized: Ricompensa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301252
+    m_Localized: Foresta
     m_Metadata:
       m_Items: []
   references:

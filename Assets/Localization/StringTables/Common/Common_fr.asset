@@ -191,10 +191,6 @@ MonoBehaviour:
     m_Localized: "Param\xE8tres syst\xE8me"
     m_Metadata:
       m_Items: []
-  - m_Id: 991213910020101
-    m_Localized: Zone
-    m_Metadata:
-      m_Items: []
   - m_Id: 991213910020102
     m_Localized: "Communaut\xE9"
     m_Metadata:
@@ -383,46 +379,6 @@ MonoBehaviour:
     m_Localized: +{0}
     m_Metadata:
       m_Items: []
-  - m_Id: 2113075096375296
-    m_Localized: Orion
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375297
-    m_Localized: "Androm\xE8de"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375298
-    m_Localized: "Cassiop\xE9e"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375299
-    m_Localized: Sirius
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375300
-    m_Localized: "Ph\xE9nix"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375301
-    m_Localized: "H\xE9lios"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569600
-    m_Localized: "\xC9lys\xE9e"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569601
-    m_Localized: Theia
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569602
-    m_Localized: Cronos
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569603
-    m_Localized: Custod
-    m_Metadata:
-      m_Items: []
   - m_Id: 2210991253278720
     m_Localized: <material={0}>{1}</material>
     m_Metadata:
@@ -447,35 +403,8 @@ MonoBehaviour:
     m_Localized: <cspace={0}em>{1}</gradient>
     m_Metadata:
       m_Items: []
-  - m_Id: 2210991291027456
-    m_Localized: "{0}Or{1} est n\xE9cessaire pour am\xE9liorer les h\xE9ros.\\n\\nL'or
-      peut \xEAtre gagn\xE9 dans les batailles, dans {2}, dans les coffres."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416064
-    m_Localized: "{0}Cristaux{1} sont n\xE9cessaires pour acheter les h\xE9ros et
-      d'autres choses dans la boutique.\\n\\nLes cristaux peuvent \xEAtre obtenus
-      dans l'{2} ou achet\xE9s dans le magasin avec de l'argent r\xE9el."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416065
-    m_Localized: "{0}\xC9toiles{1} sont n\xE9cessaires pour am\xE9liorer les h\xE9ros.\\n\\nLes
-      \xE9toiles peuvent \xEAtre gagn\xE9es dans les batailles, dans {2}, dans les
-      coffres."
-    m_Metadata:
-      m_Items: []
   - m_Id: 2272599220473856
     m_Localized: Niveau max !
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137152
-    m_Localized: "Collectez des Troph\xE9es pour ce H\xE9ros en gagnant des parties
-      contre d'autres joueurs."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137153
-    m_Localized: "Am\xE9liorez votre H\xE9ros ! Augmentez sa Sant\xE9, ses D\xE9g\xE2ts
-      d'Attaque."
     m_Metadata:
       m_Items: []
   - m_Id: 16468547517599744
@@ -492,10 +421,6 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 16468547572125698
     m_Localized: Quitter
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16973315541356544
-    m_Localized: "Achetez {0} et recevez plus de r\xE9compenses."
     m_Metadata:
       m_Items: []
   - m_Id: 17190857224540160
@@ -590,9 +515,57 @@ MonoBehaviour:
     m_Localized: Notification
     m_Metadata:
       m_Items: []
-  - m_Id: 56067945775812609
+  - m_Id: 56757973891993600
+    m_Localized: Lieux
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973975879680
+    m_Localized: "Lieux verrouill\xE9s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973988462592
     m_Localized: "Cette fonctionnalit\xE9 sera disponible dans l'une des prochaines
       mises \xE0 jour."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343920168960
+    m_Localized: Appuyez pour passer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723392
+    m_Localized: Progression de la zone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723393
+    m_Localized: Niveau {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723394
+    m_Localized: Classique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723395
+    m_Localized: Objectif
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301248
+    m_Localized: "S\xE9lectionnez les boosters\_:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301249
+    m_Localized: Coups
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301250
+    m_Localized: Temps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301251
+    m_Localized: "R\xE9compense"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301252
+    m_Localized: "For\xEAt"
     m_Metadata:
       m_Items: []
   references:

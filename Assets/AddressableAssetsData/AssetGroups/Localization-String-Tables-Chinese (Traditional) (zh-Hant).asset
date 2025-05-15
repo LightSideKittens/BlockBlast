@@ -15,14 +15,8 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Chinese (Traditional) (zh-Hant)
   m_GUID: 34f8c68ed468cdc49a7e4f290042e7dd
   m_SerializeEntries:
-  - m_GUID: 18591127bfacc2d458a5f30457dd352c
-    m_Address: BlockBlast_zh-Hant
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-zh-Hant
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4d9fbbe3bd319964b8695ac0ebdc0b26
-    m_Address: Quests_zh-Hant
+    m_Address: Tasks_zh-Hant
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-zh-Hant

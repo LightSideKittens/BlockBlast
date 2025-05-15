@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      flower-box-cover_0: 5886434026294546363
+      flower-box-cover_1: -2970220207264498544
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

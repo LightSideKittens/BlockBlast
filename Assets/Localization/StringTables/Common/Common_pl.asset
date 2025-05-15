@@ -191,10 +191,6 @@ MonoBehaviour:
     m_Localized: Ustawienia systemowe
     m_Metadata:
       m_Items: []
-  - m_Id: 991213910020101
-    m_Localized: Lokalizacja
-    m_Metadata:
-      m_Items: []
   - m_Id: 991213910020102
     m_Localized: "Spo\u0142eczno\u015B\u0107"
     m_Metadata:
@@ -383,46 +379,6 @@ MonoBehaviour:
     m_Localized: +{0}
     m_Metadata:
       m_Items: []
-  - m_Id: 2113075096375296
-    m_Localized: Orion
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375297
-    m_Localized: Andromeda
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375298
-    m_Localized: Kasjopeja
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375299
-    m_Localized: Syrius
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375300
-    m_Localized: Feniks
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375301
-    m_Localized: Helios
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569600
-    m_Localized: Elysium
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569601
-    m_Localized: Theia
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569602
-    m_Localized: Cronos
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569603
-    m_Localized: Custod
-    m_Metadata:
-      m_Items: []
   - m_Id: 2210991253278720
     m_Localized: <material={0}>{1}</material>
     m_Metadata:
@@ -447,34 +403,8 @@ MonoBehaviour:
     m_Localized: <cspace={0}em>{1}</gradient>
     m_Metadata:
       m_Items: []
-  - m_Id: 2210991291027456
-    m_Localized: "{0}Z\u0142oto{1} jest potrzebne do ulepszania bohater\xF3w.\\n\\nZ\u0142oto
-      mo\u017Cna zdoby\u0107 w bitwach, w {2}, w skrzyniach."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416064
-    m_Localized: "{0}Kryszta\u0142y{1} s\u0105 potrzebne do kupowania bohater\xF3w
-      i innych rzeczy w sklepie.\\n\\nKryszta\u0142y mo\u017Cna zdoby\u0107 w {2}
-      lub kupi\u0107 w sklepie za prawdziwe pieni\u0105dze."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416065
-    m_Localized: "{0}Gwiazdy{1} s\u0105 potrzebne do ulepszania bohater\xF3w.\\n\\nGwiazdy
-      mo\u017Cna zdoby\u0107 w bitwach, w {2}, w skrzyniach."
-    m_Metadata:
-      m_Items: []
   - m_Id: 2272599220473856
     m_Localized: Maks. poziom!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137152
-    m_Localized: "Zbieraj trofea dla tego bohatera, wygrywaj\u0105c gry przeciwko
-      innym graczom."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137153
-    m_Localized: "Ulepsz swojego bohatera! Zwi\u0119ksz jego zdrowie, obra\u017Cenia
-      ataku."
     m_Metadata:
       m_Items: []
   - m_Id: 16468547517599744
@@ -491,10 +421,6 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 16468547572125698
     m_Localized: "Wyj\u015Bcie"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16973315541356544
-    m_Localized: "Kup {0} i odbierz wi\u0119cej nagr\xF3d."
     m_Metadata:
       m_Items: []
   - m_Id: 17190857224540160
@@ -589,9 +515,57 @@ MonoBehaviour:
     m_Localized: Powiadomienie
     m_Metadata:
       m_Items: []
-  - m_Id: 56067945775812609
+  - m_Id: 56757973891993600
+    m_Localized: Lokacje
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973975879680
+    m_Localized: Zablokowane lokacje
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973988462592
     m_Localized: "Funkcja b\u0119dzie dost\u0119pna w jednej z nadchodz\u0105cych
       aktualizacji."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343920168960
+    m_Localized: "Dotknij, aby pomin\u0105\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723392
+    m_Localized: "Post\u0119p lokalizacji"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723393
+    m_Localized: Poziom {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723394
+    m_Localized: Klasyczny
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723395
+    m_Localized: Cel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301248
+    m_Localized: 'Wybierz boostery:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301249
+    m_Localized: Ruchy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301250
+    m_Localized: Czas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301251
+    m_Localized: Nagroda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301252
+    m_Localized: Las
     m_Metadata:
       m_Items: []
   references:

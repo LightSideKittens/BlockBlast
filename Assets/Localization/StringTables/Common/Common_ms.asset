@@ -191,10 +191,6 @@ MonoBehaviour:
     m_Localized: Tetapan Sistem
     m_Metadata:
       m_Items: []
-  - m_Id: 991213910020101
-    m_Localized: Lokasi
-    m_Metadata:
-      m_Items: []
   - m_Id: 991213910020102
     m_Localized: Komuniti
     m_Metadata:
@@ -383,46 +379,6 @@ MonoBehaviour:
     m_Localized: +{0}
     m_Metadata:
       m_Items: []
-  - m_Id: 2113075096375296
-    m_Localized: Orion
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375297
-    m_Localized: Andromeda
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375298
-    m_Localized: Cassiopeia
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375299
-    m_Localized: Sirius
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375300
-    m_Localized: Phoenix
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375301
-    m_Localized: Helios
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569600
-    m_Localized: Elysium
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569601
-    m_Localized: Theia
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569602
-    m_Localized: Kronos
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569603
-    m_Localized: "\u0E04\u0E31\u0E2A\u0E42\u0E17\u0E14"
-    m_Metadata:
-      m_Items: []
   - m_Id: 2210991253278720
     m_Localized: <material={0}>{1}</material>
     m_Metadata:
@@ -447,32 +403,8 @@ MonoBehaviour:
     m_Localized: <cspace={0}em>{1}</gradient>
     m_Metadata:
       m_Items: []
-  - m_Id: 2210991291027456
-    m_Localized: '{0}Emas{1} diperlukan untuk meningkatkan wira.\n\nEmas boleh diperoleh
-      dalam pertempuran, dalam {2}, dalam peti.'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416064
-    m_Localized: '{0}Kristal{1} diperlukan untuk membeli wira dan benda lain di kedai.\n\nKristal
-      boleh didapati dalam {2} atau dibeli di kedai dengan wang sebenar.'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416065
-    m_Localized: '{0}Bintang{1} diperlukan untuk meningkatkan wira.\n\nBintang boleh
-      diperoleh dalam pertempuran, dalam {2}, dalam peti.'
-    m_Metadata:
-      m_Items: []
   - m_Id: 2272599220473856
     m_Localized: Tahap maksimum!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137152
-    m_Localized: Kumpulkan Trofi untuk Wira ini dengan memenangi permainan menentang
-      pemain lain.
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137153
-    m_Localized: Tingkatkan Wira anda! Tingkatkan Kesihatan, Kerosakan Serangan mereka.
     m_Metadata:
       m_Items: []
   - m_Id: 16468547517599744
@@ -489,10 +421,6 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 16468547572125698
     m_Localized: Keluar
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16973315541356544
-    m_Localized: Beli {0} dan terima lebih banyak ganjaran.
     m_Metadata:
       m_Items: []
   - m_Id: 17190857224540160
@@ -587,8 +515,56 @@ MonoBehaviour:
     m_Localized: Pemberitahuan
     m_Metadata:
       m_Items: []
-  - m_Id: 56067945775812609
+  - m_Id: 56757973891993600
+    m_Localized: Tempat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973975879680
+    m_Localized: Tempat terkunci
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973988462592
     m_Localized: Ciri ini akan tersedia dalam salah satu kemas kini yang akan datang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343920168960
+    m_Localized: Ketik untuk langkau
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723392
+    m_Localized: Kemajuan lokasi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723393
+    m_Localized: Tahap {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723394
+    m_Localized: Klasik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723395
+    m_Localized: Matlamat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301248
+    m_Localized: 'Pilih penambah:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301249
+    m_Localized: Gerakan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301250
+    m_Localized: Masa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301251
+    m_Localized: Ganjaran
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301252
+    m_Localized: Hutan
     m_Metadata:
       m_Items: []
   references:

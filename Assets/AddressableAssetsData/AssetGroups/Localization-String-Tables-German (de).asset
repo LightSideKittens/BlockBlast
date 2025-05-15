@@ -21,14 +21,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-de
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6c7a7567f51b6b547a3c58fb58ebca4e
-    m_Address: BlockBlast_de
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-de
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ddacd98f5ad3c2f449a006d57ae2dee1
-    m_Address: Quests_de
+    m_Address: Tasks_de
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-de

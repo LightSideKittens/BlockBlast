@@ -15,14 +15,8 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Spanish (es)
   m_GUID: 0b9d856d59c348f45a70033666e1b22e
   m_SerializeEntries:
-  - m_GUID: 11c81dd9a68d48340a0c3807257da461
-    m_Address: BlockBlast_es
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-es
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b4cd423121e8c164d8198bbe794b75b6
-    m_Address: Quests_es
+    m_Address: Tasks_es
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-es

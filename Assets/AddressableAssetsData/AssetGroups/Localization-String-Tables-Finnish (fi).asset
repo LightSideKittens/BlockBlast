@@ -16,19 +16,13 @@ MonoBehaviour:
   m_GUID: c84b6947a910a9244be7e7a80ec820fa
   m_SerializeEntries:
   - m_GUID: 24030d248edbf6e498cfe58d98aea162
-    m_Address: Quests_fi
+    m_Address: Tasks_fi
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-fi
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 41ac89d900c19564680306c7f9e0da84
     m_Address: Common_fi
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-fi
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 801e98f6ec2b546478cfdd09e9d9eab3
-    m_Address: BlockBlast_fi
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-fi

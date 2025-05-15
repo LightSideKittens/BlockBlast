@@ -191,10 +191,6 @@ MonoBehaviour:
     m_Localized: "Sistem Ayarlar\u0131"
     m_Metadata:
       m_Items: []
-  - m_Id: 991213910020101
-    m_Localized: Konum
-    m_Metadata:
-      m_Items: []
   - m_Id: 991213910020102
     m_Localized: Topluluk
     m_Metadata:
@@ -384,46 +380,6 @@ MonoBehaviour:
     m_Localized: +{0}
     m_Metadata:
       m_Items: []
-  - m_Id: 2113075096375296
-    m_Localized: Orion
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375297
-    m_Localized: Andromeda
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375298
-    m_Localized: Kassiopiya
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375299
-    m_Localized: Sirius
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375300
-    m_Localized: "Anka Ku\u015Fu"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375301
-    m_Localized: Helios
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569600
-    m_Localized: Elysium
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569601
-    m_Localized: Theia
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569602
-    m_Localized: Kronos
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569603
-    m_Localized: Custod
-    m_Metadata:
-      m_Items: []
   - m_Id: 2210991253278720
     m_Localized: <material={0}>{1}</material>
     m_Metadata:
@@ -448,35 +404,8 @@ MonoBehaviour:
     m_Localized: <cspace={0}em>{1}</gradient>
     m_Metadata:
       m_Items: []
-  - m_Id: 2210991291027456
-    m_Localized: "{0}Alt\u0131n{1} kahramanlar\u0131 geli\u015Ftirmek i\xE7in gereklidir.\\n\\nAlt\u0131n,
-      sava\u015Flarda, {2}'ta, sand\u0131klarda kazan\u0131labilir."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416064
-    m_Localized: "{0}Kristaller{1}, kahramanlar\u0131 ve ma\u011Fazada di\u011Fer
-      \u015Feyleri sat\u0131n almak i\xE7in gereklidir.\\n\\nKristaller {2}'ta elde
-      edilebilir veya ger\xE7ek parayla ma\u011Fazadan sat\u0131n al\u0131nabilir."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416065
-    m_Localized: "{0}Y\u0131ld\u0131zlar{1} kahramanlar\u0131 geli\u015Ftirmek i\xE7in
-      gereklidir.\\n\\nY\u0131ld\u0131zlar, sava\u015Flarda, {2}'ta, sand\u0131klarda
-      kazan\u0131labilir."
-    m_Metadata:
-      m_Items: []
   - m_Id: 2272599220473856
     m_Localized: Maksimum seviye!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137152
-    m_Localized: "Di\u011Fer oyunculara kar\u015F\u0131 oyunlar kazanarak bu kahraman
-      i\xE7in kupalar topla."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137153
-    m_Localized: "Kahraman\u0131n\u0131 y\xFCkselt! Sa\u011Fl\u0131\u011F\u0131n\u0131
-      ve Sald\u0131r\u0131 Hasar\u0131n\u0131 art\u0131r."
     m_Metadata:
       m_Items: []
   - m_Id: 16468547517599744
@@ -493,10 +422,6 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 16468547572125698
     m_Localized: "\xC7\u0131k\u0131\u015F"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16973315541356544
-    m_Localized: "{0} sat\u0131n al\u0131n ve daha fazla \xF6d\xFCl al\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 17190857224540160
@@ -591,9 +516,57 @@ MonoBehaviour:
     m_Localized: Bildirim
     m_Metadata:
       m_Items: []
-  - m_Id: 56067945775812609
+  - m_Id: 56757973891993600
+    m_Localized: Mekanlar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973975879680
+    m_Localized: Kilitli mekanlar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973988462592
     m_Localized: "Bu \xF6zellik yak\u0131nda gelecek g\xFCncellemelerden birinde
       kullan\u0131labilir olacak."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343920168960
+    m_Localized: "Atlamak i\xE7in dokunun"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723392
+    m_Localized: "B\xF6lge ilerlemesi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723393
+    m_Localized: Seviye {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723394
+    m_Localized: Klasik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723395
+    m_Localized: "Ama\xE7"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301248
+    m_Localized: "G\xFC\xE7lendiricileri se\xE7in:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301249
+    m_Localized: Hamleler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301250
+    m_Localized: "S\xFCre"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301251
+    m_Localized: "\xD6d\xFCl"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301252
+    m_Localized: "Bal\u0131kesir"
     m_Metadata:
       m_Items: []
   references:

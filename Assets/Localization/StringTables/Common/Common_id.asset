@@ -191,10 +191,6 @@ MonoBehaviour:
     m_Localized: Setelan Sistem
     m_Metadata:
       m_Items: []
-  - m_Id: 991213910020101
-    m_Localized: Lokasi
-    m_Metadata:
-      m_Items: []
   - m_Id: 991213910020102
     m_Localized: Komunitas
     m_Metadata:
@@ -383,46 +379,6 @@ MonoBehaviour:
     m_Localized: +{0}
     m_Metadata:
       m_Items: []
-  - m_Id: 2113075096375296
-    m_Localized: Orion
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375297
-    m_Localized: Andromeda
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375298
-    m_Localized: Cassiopeia
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375299
-    m_Localized: Sirius
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375300
-    m_Localized: Phoenix
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075096375301
-    m_Localized: Helios
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569600
-    m_Localized: Elysium
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569601
-    m_Localized: Theia
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569602
-    m_Localized: Cronos
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2113075100569603
-    m_Localized: Custod
-    m_Metadata:
-      m_Items: []
   - m_Id: 2210991253278720
     m_Localized: <material={0}>{1}</material>
     m_Metadata:
@@ -447,33 +403,8 @@ MonoBehaviour:
     m_Localized: <cspace={0}em>{1}</gradient>
     m_Metadata:
       m_Items: []
-  - m_Id: 2210991291027456
-    m_Localized: '{0}Emas{1} diperlukan untuk meningkatkan pahlawan.\n\nEmas dapat
-      diperoleh dalam pertempuran, di {2}, dalam peti.'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416064
-    m_Localized: '{0}Kristal{1} diperlukan untuk membeli pahlawan dan barang lain
-      di toko.\n\nKristal dapat diperoleh di {2} atau dibeli di toko dengan uang
-      sungguhan.'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2210991299416065
-    m_Localized: '{0}Bintang{1} diperlukan untuk meningkatkan pahlawan.\n\nBintang
-      dapat diperoleh dalam pertempuran, di {2}, dalam peti.'
-    m_Metadata:
-      m_Items: []
   - m_Id: 2272599220473856
     m_Localized: Level maks!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137152
-    m_Localized: Kumpulkan Trofi untuk Pahlawan ini dengan memenangkan permainan
-      melawan pemain lain.
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2272599321137153
-    m_Localized: Tingkatkan Pahlawan Anda! Tingkatkan Kesehatan dan Serangan mereka.
     m_Metadata:
       m_Items: []
   - m_Id: 16468547517599744
@@ -490,10 +421,6 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 16468547572125698
     m_Localized: Keluar
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16973315541356544
-    m_Localized: Beli {0} dan terima lebih banyak hadiah.
     m_Metadata:
       m_Items: []
   - m_Id: 17190857224540160
@@ -588,8 +515,56 @@ MonoBehaviour:
     m_Localized: Notifikasi
     m_Metadata:
       m_Items: []
-  - m_Id: 56067945775812609
+  - m_Id: 56757973891993600
+    m_Localized: Lokasi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973975879680
+    m_Localized: Lokasi terkunci
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56757973988462592
     m_Localized: Fitur ini akan tersedia dalam salah satu pembaruan mendatang.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343920168960
+    m_Localized: Ketuk untuk lewati
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723392
+    m_Localized: Progres lokasi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723393
+    m_Localized: Level {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723394
+    m_Localized: Klasik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040343953723395
+    m_Localized: Tujuan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301248
+    m_Localized: 'Pilih booster:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301249
+    m_Localized: Gerakan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301250
+    m_Localized: Waktu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301251
+    m_Localized: Hadiah
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58040344117301252
+    m_Localized: Hutan
     m_Metadata:
       m_Items: []
   references:
