@@ -736,7 +736,7 @@ PrefabInstance:
     - target: {fileID: 2028806025013019736, guid: 4970079ad02207a42bf75d2cb50bbe50, type: 3}
       propertyPath: managedReferences[4229860960537411786].prefab
       value: 
-      objectReference: {fileID: 3101030846031512032, guid: b5b82b742fb5f6f4a99c96f7c6fe95a2, type: 3}
+      objectReference: {fileID: 3101030846031512032, guid: 2ef4f975136e3904488a1e740ea92705, type: 3}
     - target: {fileID: 2028806025013019736, guid: 4970079ad02207a42bf75d2cb50bbe50, type: 3}
       propertyPath: managedReferences[4229860960537411786].showOnlyWhenCreated
       value: 0
@@ -1358,12 +1358,44 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2248442549442859054, guid: 953d989b3c3b2f8478be4669114019eb, type: 3}
+      propertyPath: managedReferences[4229860960537411682].timeOffsetPerTarget.m_PreInfinity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2248442549442859054, guid: 953d989b3c3b2f8478be4669114019eb, type: 3}
+      propertyPath: managedReferences[4229860960537411698].timeOffsetPerTarget.m_PreInfinity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2248442549442859054, guid: 953d989b3c3b2f8478be4669114019eb, type: 3}
+      propertyPath: managedReferences[4229860960537411682].timeOffsetPerTarget.m_PostInfinity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2248442549442859054, guid: 953d989b3c3b2f8478be4669114019eb, type: 3}
+      propertyPath: managedReferences[4229860960537411698].timeOffsetPerTarget.m_PostInfinity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2248442549442859054, guid: 953d989b3c3b2f8478be4669114019eb, type: 3}
+      propertyPath: managedReferences[4229860960537411682].timeOffsetPerTarget.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2248442549442859054, guid: 953d989b3c3b2f8478be4669114019eb, type: 3}
+      propertyPath: managedReferences[4229860960537411698].timeOffsetPerTarget.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2248442549442859054, guid: 953d989b3c3b2f8478be4669114019eb, type: 3}
       propertyPath: managedReferences[4229860960537411681].animation.animsData.Array.data[0].anim
       value: 4229860960537411682
       objectReference: {fileID: 0}
     - target: {fileID: 2248442549442859054, guid: 953d989b3c3b2f8478be4669114019eb, type: 3}
       propertyPath: managedReferences[4229860960537411681].animation.animsData.Array.data[1].anim
       value: 4229860960537411694
+      objectReference: {fileID: 0}
+    - target: {fileID: 2248442549442859054, guid: 953d989b3c3b2f8478be4669114019eb, type: 3}
+      propertyPath: managedReferences[4229860960537411682].timeOffsetPerTarget.m_Curve.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2248442549442859054, guid: 953d989b3c3b2f8478be4669114019eb, type: 3}
+      propertyPath: managedReferences[4229860960537411698].timeOffsetPerTarget.m_Curve.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2248442549442859054, guid: 953d989b3c3b2f8478be4669114019eb, type: 3}
       propertyPath: managedReferences[4229860960537411681].animation.animsData.Array.data[0].timeOffset
