@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Launcher.unity
     guid: 5f9a284cfd586ec45943b50f1c2d07f0
-  - enabled: 1
-    path: Assets/Scenes/Forest.unity
+  - enabled: 0
+    path: Assets/Scenes/DarkForest.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/New Scene.unity
+    guid: 23a65b377c01875429c960e68f4e3d68
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: e1142f36b6fe24d42bb4281b35f3a63a, type: 2}
     com.unity.localization.addressable-group-rules: {fileID: 11400000, guid: 1a689349ccf6e5f46a0651dbb6ae9d91, type: 2}

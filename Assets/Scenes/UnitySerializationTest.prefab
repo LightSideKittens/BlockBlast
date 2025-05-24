@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8042544469901633267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4900524722171352673}
+  - component: {fileID: 1197761819017323325}
+  m_Layer: 0
+  m_Name: UnitySerializationTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4900524722171352673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8042544469901633267}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.03337, y: 0.9222, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1197761819017323325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8042544469901633267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e82579f8f6144a68c693c25650795cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dictPairs:
+  - key: k1
+    value: 10
+  - key: k2
+    value: 20
+  hashSetData:
+  - A
+  - B
+  - C
+  shape:
+    rid: 3873714953870115023
+  shapeList:
+  - rid: 3873714953870115024
+  - rid: 3873714953870115025
+  ability:
+    rid: 3873714953870115026
+  abilityList:
+  - rid: 3873714953870115027
+  - rid: 3873714953870115028
+  references:
+    version: 2
+    RefIds:
+    - rid: 3873714953870115023
+      type: {class: Circle, ns: , asm: Assembly-CSharp}
+      data:
+        name: Ball
+        radius: 1.5
+    - rid: 3873714953870115024
+      type: {class: Circle, ns: , asm: Assembly-CSharp}
+      data:
+        name: "Small\_Ball"
+        radius: 0.5
+    - rid: 3873714953870115025
+      type: {class: Rectangle, ns: , asm: Assembly-CSharp}
+      data:
+        name: Box
+        width: 2
+        height: 1
+    - rid: 3873714953870115026
+      type: {class: Jump, ns: , asm: Assembly-CSharp}
+      data:
+        height: 3
+    - rid: 3873714953870115027
+      type: {class: Jump, ns: , asm: Assembly-CSharp}
+      data:
+        height: 1.2
+    - rid: 3873714953870115028
+      type: {class: Fly, ns: , asm: Assembly-CSharp}
+      data:
+        speed: 8

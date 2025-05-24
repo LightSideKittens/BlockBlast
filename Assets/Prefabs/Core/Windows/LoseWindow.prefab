@@ -311,7 +311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
       propertyPath: 'managedReferences[1724297593403212795]'
-      value: LSCore.LSDelegates LoadScene
+      value: LSCore.DoIt LoadScene
       objectReference: {fileID: 0}
     - target: {fileID: -4816155925899233644, guid: 2253c6013e911e24f88dfa44a22e9f2c, type: 3}
       propertyPath: 'managedReferences[1724297686267199723]'

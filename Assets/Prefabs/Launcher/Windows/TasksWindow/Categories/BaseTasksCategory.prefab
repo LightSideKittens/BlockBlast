@@ -173,7 +173,7 @@ MonoBehaviour:
           rid: 4229861110881977027
         path: 
     - rid: 4229861110881977027
-      type: {class: 'RefDataProvider`1[[UnityEngine.Transform, UnityEngine.CoreModule]]', ns: , asm: LSCore.LSDelegates}
+      type: {class: 'RefDataProvider`1[[UnityEngine.Transform, UnityEngine.CoreModule]]', ns: , asm: LSCore.DoIt}
       data:
         data: {fileID: 8826213721951690112}
     - rid: 4229861110881977031
@@ -195,13 +195,13 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
     - rid: 4229861110881977032
-      type: {class: 'PathDataProvider`1[[UnityEngine.UI.Graphic, UnityEngine.UI]]', ns: , asm: LSCore.LSDelegates}
+      type: {class: 'PathDataProvider`1[[UnityEngine.UI.Graphic, UnityEngine.UI]]', ns: , asm: LSCore.DoIt}
       data:
         root:
           rid: 4229861110881977033
         path: 
     - rid: 4229861110881977033
-      type: {class: 'RefDataProvider`1[[UnityEngine.Transform, UnityEngine.CoreModule]]', ns: , asm: LSCore.LSDelegates}
+      type: {class: 'RefDataProvider`1[[UnityEngine.Transform, UnityEngine.CoreModule]]', ns: , asm: LSCore.DoIt}
       data:
         data: {fileID: 8826213721951690112}
     - rid: 4229861110881977156
@@ -232,7 +232,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
     - rid: 4229861110881977158
-      type: {class: 'PathDataProvider`1[[UnityEngine.Transform, UnityEngine.CoreModule]]', ns: , asm: LSCore.LSDelegates}
+      type: {class: 'PathDataProvider`1[[UnityEngine.Transform, UnityEngine.CoreModule]]', ns: , asm: LSCore.DoIt}
       data:
         root:
           rid: 4229861110881977160
